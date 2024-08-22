@@ -22,14 +22,15 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	total_size = count * size;
-//	if (count != 0 && total_size / count != size)
-//		return (NULL);
-//	memory = malloc(total_size);
-//	if (memory == NULL)
-//		return (NULL);/	c_memory = (char *)memory;
-//	while (total_size > i)
-//	{
-//		c_memory[i] = 0;
+	if ((count != 0 && total_size) || count != size)
+		return (NULL);
+	memory = malloc(total_size);
+	if (memory == NULL)
+		return (NULL);	
+	c_memory = (char *)memory;
+	while (total_size > i)
+	{
+		c_memory[i] = 0;
 		i++;
 	}
 	return (memory);

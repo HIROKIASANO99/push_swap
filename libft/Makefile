@@ -1,4 +1,4 @@
-INCLUDE = .
+INCLUDE = ../include
 NAME = libft.a
 SRCS = \
 	ft_bzero.c ft_memcpy.c ft_memmove.c \
