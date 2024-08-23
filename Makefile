@@ -2,8 +2,7 @@
 INCLUDE	= ./include
 NAME	= hiroki.a
 SRCS	= \
-
-
+	main.c 
 OBJS	= $(SRCS:.c=.o)
 CC		= cc
 CFLG	= -Wall -Wextra -Werror
@@ -21,7 +20,7 @@ $(NAME):
 all:$(NAME)
 
 .c.o:
-	$(CC) $(CFLG) -I $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLG) -I$(INCLUDE) -c $< -o $@
 clean:
 	rm -f $(OBJS)
 	@make -C $(LIBFT_PATH) clean

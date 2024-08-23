@@ -1,4 +1,4 @@
-INCLUDE = ../include
+INCLUDE = .
 NAME = libft.a
 SRCS = \
 	ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -29,7 +29,7 @@ bonus: $(OBJS) $(BNSOBJS)
 #all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAG) -I $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAG) -I$(INCLUDE) -c $< -o $@
 clean:
 	rm -f $(OBJS) $(BNSOBJS)
 
