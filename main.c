@@ -4,27 +4,29 @@
 int main(int argc, char **argv)
 {
 	int i;
-	int j;
 	int num;
-	int *stack_a;
+	t_list *stack_a;
+	t_list *add_stack;
 
-	i = 0;
+	i = 1;
 	num = 0;
-	
-	stack_a =(int*)malloc(sizeof(int) * (argc - 1));
-	if(!stack_a)
+	if(argc < 2)
 		return(0);
+	stack_a = ft_lstnew(argv[i]);
+	stack_a->number=ft_atoi(stack_a->content);
 	while(i < argc - 1)
 		{
-			num = ft_atoi(argv[i + 1]);
-			stack_a[i] = num;
+			add_stack = ft_lstnew(argv[i + 1]);
+			add_stack->number = ft_atoi(add_stack->content);
+			ft_lstadd_back(&stack_a, add_stack);
 			i++;
 		}
-	j = 0;
-	while(i != j)
-		{
-			printf("%d\n",stack_a[j]);
-			j++;
-		}
-	free(stack_a);
+	while (stack_a->next)
+	{
+		printf("%s\n", (char *)stack_a->content);
+		stack_a = stack_a->next;
+	}
+	printf("%s\n", (char *)stack_a->content);
+	return(0);
 }
+

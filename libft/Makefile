@@ -17,7 +17,7 @@ OBJS = $(SRCS:.c=.o)
 BNSOBJS = $(BONUSSRCS:.c=.o)
 
 CC = gcc
-CFLAG = -Wall -Wextra -Werror
+CFLAG = -Wall -Wextra -Werror -g
 
 
 $(NAME) : $(OBJS)

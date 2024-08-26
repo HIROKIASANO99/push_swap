@@ -11,7 +11,7 @@ LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
 
 $(NAME):
-		make -C $(LIBFT_PATH) #$(OBJS)
+		make -C $(LIBFT_PATH) bonus #$(OBJS)
 				cp	$(LIBFT_PATH)/$(LIBFT_NAME)	$(NAME)
 		ar rc $(OBJS) $(NAME)
 
