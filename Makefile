@@ -2,7 +2,7 @@
 INCLUDE	= ./include
 NAME	= hiroki.a
 SRCS	= \
-	main.c 
+
 OBJS	= $(SRCS:.c=.o)
 CC		= cc
 CFLG	= -Wall -Wextra -Werror
@@ -11,9 +11,9 @@ LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
 
 $(NAME):
-		make -C $(LIBFT_PATH) $(OBJS)
+		make -C $(LIBFT_PATH) #$(OBJS)
 				cp	$(LIBFT_PATH)/$(LIBFT_NAME)	$(NAME)
-		ar rc $(NAME) $(OBJS)
+		ar rc $(OBJS) $(NAME)
 
 
 
