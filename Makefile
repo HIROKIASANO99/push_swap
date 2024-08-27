@@ -2,7 +2,6 @@
 INCLUDE	= ./include
 NAME	= hiroki.a
 SRCS	= \
-
 OBJS	= $(SRCS:.c=.o)
 CC		= cc
 CFLG	= -Wall -Wextra -Werror

@@ -12,21 +12,24 @@ int main(int argc, char **argv)
 	num = 0;
 	if(argc < 2)
 		return(0);
+//	ft_lstnewにatoi関数を入れた
+
 	stack_a = ft_lstnew(argv[i]);
-	stack_a->number=ft_atoi(stack_a->content);
+	printf("中身 = %d\n", stack_a->number);
 	while(i < argc - 1)
 		{
 			add_stack = ft_lstnew(argv[i + 1]);
-			add_stack->number = ft_atoi(add_stack->content);
+			printf("中身 = %d\n", add_stack->number);
 			ft_lstadd_back(&stack_a, add_stack);
 			i++;
 		}
 	while (stack_a->next)
 	{
-		printf("%s\n", (char *)stack_a->content);
+		printf("%d\n", stack_a->number);
+	printf("-------------\n");
 		stack_a = stack_a->next;
 	}
-	printf("%s\n", (char *)stack_a->content);
+	printf("%d\n", stack_a->number);
 	return(0);
 }
 

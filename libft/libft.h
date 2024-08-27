@@ -16,6 +16,8 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+//消すもの
+# include <stdio.h>
 
 typedef struct s_list
 {
