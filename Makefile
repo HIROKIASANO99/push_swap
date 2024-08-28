@@ -1,7 +1,8 @@
 
 INCLUDE	= ./include
-NAME	= hiroki.a
+NAME	= hiroki
 SRCS	= \
+		main.c
 OBJS	= $(SRCS:.c=.o)
 CC		= cc
 CFLG	= -Wall -Wextra -Werror
@@ -9,10 +10,10 @@ CFLG	= -Wall -Wextra -Werror
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
 
-$(NAME):
-		make -C $(LIBFT_PATH) bonus #$(OBJS)
-				cp	$(LIBFT_PATH)/$(LIBFT_NAME)	$(NAME)
-		ar rc $(OBJS) $(NAME)
+$(NAME): $(OBJS) 
+		make -C $(LIBFT_PATH) bonus 
+				cp	$(LIBFT_PATH)/$(LIBFT_NAME) .
+		$(CC) $(CFLG) $(OBJS) $(LIBFT_NAME) -o $(NAME)
 
 
 
@@ -25,7 +26,7 @@ clean:
 	@make -C $(LIBFT_PATH) clean
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(LIBFT_PATH)/$(LIBFT_NAME)
+	rm -f $(LIBFT_PATH)/$(LIBFT_NAME) $(NAME)
 
 re: fclean all
 
