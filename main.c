@@ -19,8 +19,6 @@ int main(int argc, char **argv)
 			ft_lstadd_back(&stack_a, add_stack);
 			i++;
 		}
-	while (stack_a->next)
-		stack_a = stack_a->next;
 	return(0);
 }
 

@@ -21,6 +21,5 @@ t_list *ft_lstnew(void *content)
 		return (NULL);
 	new->number = ft_atoi((char *)content);
 	new->next = NULL;
-	printf("999中身 = %d\n", new->number);
 	return(new);
 }

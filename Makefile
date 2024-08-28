@@ -1,6 +1,6 @@
 
 INCLUDE	= ./include
-NAME	= hiroki
+NAME	= p_w
 SRCS	= \
 		main.c
 OBJS	= $(SRCS:.c=.o)
@@ -26,6 +26,7 @@ clean:
 	@make -C $(LIBFT_PATH) clean
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(LIBFT_NAME) $(NAME)
 	rm -f $(LIBFT_PATH)/$(LIBFT_NAME) $(NAME)
 
 re: fclean all
