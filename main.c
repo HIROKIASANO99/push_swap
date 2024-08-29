@@ -1,6 +1,6 @@
 #include"./include/push_swap.h"
 #include"./libft/libft.h"
-#include"./ft_printf/include/libft.h"
+#include"./ft_printf/include/ft_printf.h"
 #include<stdio.h>
 
 int main(int argc, char **argv)
