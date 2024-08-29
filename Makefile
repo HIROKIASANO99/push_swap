@@ -14,6 +14,7 @@ $(NAME): $(OBJS)
 		make -C $(LIBFT_PATH) bonus 
 				cp	$(LIBFT_PATH)/$(LIBFT_NAME) .
 		$(CC) $(CFLG) $(OBJS) $(LIBFT_NAME) -o $(NAME)
+		rm -f $(LIBFT_NAME) 
 
 
 
@@ -26,7 +27,6 @@ clean:
 	@make -C $(LIBFT_PATH) clean
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(LIBFT_NAME) $(NAME)
 	rm -f $(LIBFT_PATH)/$(LIBFT_NAME) $(NAME)
 
 re: fclean all
