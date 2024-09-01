@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include"../include/push_swap.h"
+#include"../ft_printf/include/ft_printf.h"
 
 t_list *ft_lstnew(void *content)
 {

@@ -110,11 +110,12 @@ char	**result_free(char const *s, char c, char **result, int count_str)
 	return (result);
 }
 
-char	**ft_split(char const *s, char c)
+t_list	ft_split(char const *s, char c)
 {
 	int		count_str;
 	char	**result;
 	char	**buf;
+	t_list *stack_a;
 
 	result = NULL;
 	if (!s)
