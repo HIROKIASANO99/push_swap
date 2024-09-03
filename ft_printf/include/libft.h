@@ -19,8 +19,8 @@
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
-int		ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-int		ft_putnbr_fd(int n, int fd, int *len);
+int		ft_printf_putchar_fd(char c, int fd);
+void	ft_printf_putstr_fd(char *s, int fd);
+int		ft_printf_putnbr_fd(int n, int fd, int *len);
 
 #endif

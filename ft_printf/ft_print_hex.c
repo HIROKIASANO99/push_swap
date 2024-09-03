@@ -22,17 +22,17 @@ int	ft_convert_base(unsigned int num, char type, int *len)
 	if (num < 16)
 	{
 		if (type == 'X')
-			ft_putchar_fd(toupper[num % 16], 1);
+			ft_printf_putchar_fd(toupper[num % 16], 1);
 		if (type == 'x')
-			ft_putchar_fd(tolower[num % 16], 1);
+			ft_printf_putchar_fd(tolower[num % 16], 1);
 		(*len)++;
 		return (1);
 	}
 	ft_convert_base(num / 16, type, len);
 	if (type == 'X')
-		ft_putchar_fd(toupper[num % 16], 1);
+		ft_printf_putchar_fd(toupper[num % 16], 1);
 	if (type == 'x')
-		ft_putchar_fd(tolower[num % 16], 1);
+		ft_printf_putchar_fd(tolower[num % 16], 1);
 	(*len)++;
 	return (*len);
 }

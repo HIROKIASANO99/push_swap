@@ -19,13 +19,13 @@ int	ft_print_address(unsigned long long address, int *len)
 	tolower = "0123456789abcdef";
 	if (address < 16)
 	{
-		if (ft_putchar_fd(tolower[address % 16], 1) == -1)
+		if (ft_printf_putchar_fd(tolower[address % 16], 1) == -1)
 			return (-1);
 		(*len)++;
 		return (*len);
 	}
 	ft_print_address(address / 16, len);
-	ft_putchar_fd(tolower[address % 16], 1);
+	ft_printf_putchar_fd(tolower[address % 16], 1);
 	(*len)++;
 	return (*len);
 }

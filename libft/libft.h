@@ -26,7 +26,7 @@ struct	s_list *next;
 }	t_list;
 
 
-t_list	ft_split(char const *s, char c);
+t_list	*ft_split(char const *s, char c);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

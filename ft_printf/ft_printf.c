@@ -55,9 +55,9 @@ static int	ft_process_by_type(char type, va_list ap)
 		return (ft_print_address(va_arg(ap, unsigned long long), &i));
 	}
 	if (type == 'd' || type == 'i')
-		return (ft_putnbr_fd(va_arg(ap, int), 1, &i));
+		return (ft_printf_putnbr_fd(va_arg(ap, int), 1, &i));
 	if (type == 'u')
-		return (ft_putnbr_unsign_fd(va_arg(ap, unsigned int), 1, &i));
+		return (ft_printf_putnbr_unsign_fd(va_arg(ap, unsigned int), 1, &i));
 	if (type == 'x' || type == 'X')
 		return (ft_convert_base(va_arg(ap, unsigned int), type, &i));
 	if (type == '%')

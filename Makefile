@@ -4,8 +4,8 @@ NAME	= p_w
 SRCS	= \
 		main.c
 OBJS	= $(SRCS:.c=.o)
-CC		= cc
-CFLG	= -Wall -Wextra -Werror
+CC		= cc 
+CFLG	= -Wall -Wextra -Werror -fsanitize=address
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a

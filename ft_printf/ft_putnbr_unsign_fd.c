@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_unsign_fd(unsigned int n, int fd, int *len)
+int	ft_printf_putnbr_unsign_fd(unsigned int n, int fd, int *len)
 {
 	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd, len);
-	ft_putchar_fd((n % 10 + '0'), fd);
+		ft_printf_putnbr_fd(n / 10, fd, len);
+	ft_printf_putchar_fd((n % 10 + '0'), fd);
 	(*len)++;
 	return (*len);
 }

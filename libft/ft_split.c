@@ -42,7 +42,7 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 	start = 0;
 	end = 0;
 	i = 0;
-	if (!org_str && !res_char)
+	if (!org_str )
 		return (0);
 	while (org_str[i] == c && org_str[i])
 	{
@@ -55,8 +55,7 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 		end++;
 		i++;
 	}
-	*res_char = (char *)malloc(end - start + 1);
-	if (res_char == NULL)
+	if(res_char == NULL)
 		return (0);
 	return (end);
 }
@@ -69,8 +68,8 @@ static void	add_char_to_string(char *ss, char **result, char c)
 
 	i = 0;
 	j = 0;
-	while (ss[i] == c)
-		i++;
+	//if (ss[i] == c)
+	//	i++;
 	while (ss[i])
 	{
 		k = 0;
@@ -85,7 +84,7 @@ static void	add_char_to_string(char *ss, char **result, char c)
 	result[j] = NULL;
 }
 
-char	**result_free(char const *s, char c, char **result, int count_str)
+char	**result_free(char const *s, char c,char **result, int count_str)
 {
 	int	i;
 	int	n_str;
@@ -98,36 +97,49 @@ char	**result_free(char const *s, char c, char **result, int count_str)
 	while (i < count_str)
 	{
 		n_str = n_str + ft_count_char((char *)s + n_str, c, &result[i]);
-		if (result[i] == NULL)
-		{
-			while (--i >= 0)
-				free(result[i]);
-			free(result);
-		}
+//		if (result[i] != NULL)
+//		{
+//			printf("-------\n");
+//			while (--i >= 0)
+//				free(result[i]);
+//			free(result);
+//		}
 		i++;
 	}
 	add_char_to_string((char *)s, result, c);
 	return (result);
 }
 
-t_list	ft_split(char const *s, char c)
+t_list	*ft_split(char const *s, char c)
 {
+	int i;
 	int		count_str;
 	char	**result;
-	char	**buf;
 	t_list *stack_a;
+	t_list *add_stack;
 
 	result = NULL;
 	if (!s)
 		return (NULL);
 	if (*s == '\0')
 	{
-		buf = (char **)malloc(sizeof(char *) * 1);
-		buf[0] = NULL;
-		return (buf);
+		result = (char **)malloc(sizeof(char *) * 1);
+		result[0] = NULL;
+		return (NULL);
 	}
 	count_str = ft_count_str((char *)s, c);
-	return (result_free(s, c, result, count_str));
+	result = result_free(s, c, result, count_str);
+	i = 0;
+	stack_a = ft_lstnew(result[i++]);
+	while(result[i] != NULL)
+	{
+		add_stack = ft_lstnew(result[i]);
+		if(!add_stack)
+			return(NULL);
+		ft_lstadd_back(&stack_a, add_stack);
+		i++;
+	}
+	return (stack_a);
 }
 /*
 int	main(int argc, char **argv)
