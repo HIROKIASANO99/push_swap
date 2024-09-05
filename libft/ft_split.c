@@ -42,7 +42,7 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 	start = 0;
 	end = 0;
 	i = 0;
-	if (!org_str )
+	if (!org_str && !res_char)
 		return (0);
 	while (org_str[i] == c && org_str[i])
 	{
@@ -55,6 +55,7 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 		end++;
 		i++;
 	}
+	*res_char = (char *)malloc(end - start + 1);
 	if(res_char == NULL)
 		return (0);
 	return (end);
@@ -68,8 +69,8 @@ static void	add_char_to_string(char *ss, char **result, char c)
 
 	i = 0;
 	j = 0;
-	//if (ss[i] == c)
-	//	i++;
+	if (ss[i] == c)
+		i++;
 	while (ss[i])
 	{
 		k = 0;
@@ -97,49 +98,41 @@ char	**result_free(char const *s, char c,char **result, int count_str)
 	while (i < count_str)
 	{
 		n_str = n_str + ft_count_char((char *)s + n_str, c, &result[i]);
-//		if (result[i] != NULL)
-//		{
-//			printf("-------\n");
-//			while (--i >= 0)
-//				free(result[i]);
-//			free(result);
-//		}
+		if (result[i] == NULL)
+		{
+			while (--i >= 0)
+			{
+				free(result[i]);
+				result[i] = NULL;
+			}
+			free(result);
+			result= NULL;
+		}
 		i++;
 	}
+	printf("sssssssss---------------\n");
 	add_char_to_string((char *)s, result, c);
 	return (result);
 }
 
-t_list	*ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c,int *get_count_str)
 {
-	int i;
 	int		count_str;
 	char	**result;
-	t_list *stack_a;
-	t_list *add_stack;
+	char	**buf;
 
 	result = NULL;
 	if (!s)
 		return (NULL);
 	if (*s == '\0')
 	{
-		result = (char **)malloc(sizeof(char *) * 1);
-		result[0] = NULL;
-		return (NULL);
+		buf = (char **)malloc(sizeof(char *) * 1);
+		buf[0] = NULL;
+		return (buf);
 	}
 	count_str = ft_count_str((char *)s, c);
-	result = result_free(s, c, result, count_str);
-	i = 0;
-	stack_a = ft_lstnew(result[i++]);
-	while(result[i] != NULL)
-	{
-		add_stack = ft_lstnew(result[i]);
-		if(!add_stack)
-			return(NULL);
-		ft_lstadd_back(&stack_a, add_stack);
-		i++;
-	}
-	return (stack_a);
+	*get_count_str = count_str;
+	return (result_free(s, c, result, count_str));
 }
 /*
 int	main(int argc, char **argv)
@@ -151,9 +144,10 @@ int	main(int argc, char **argv)
 	char		set;
 	char		**ret;
 	int			i;
-
+	int			ko;
 	c = ' ';
-	result=ft_split(s ,c);
+	printf("------------");
+	result=ft_split(s ,c,&ko);
 	printf("%s\n",result[0]);
 	printf("%s\n",result[1]);
 	printf("%s\n",result[2]);
@@ -161,7 +155,8 @@ int	main(int argc, char **argv)
 		return(0);
 	str = argv[1];
 	set = argv[2][0];
-	ret = ft_split(str, set);
+	ko = 0;
+	ret = ft_split(str, set, &ko);
 	i = 0;
 	printf("size: %d\n", ft_count_str(str, set));
 	while (ret[i])

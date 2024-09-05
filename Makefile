@@ -5,7 +5,7 @@ SRCS	= \
 		main.c
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 
-CFLG	= -Wall -Wextra -Werror -fsanitize=address
+CFLG	= -Wall -Wextra -Werror
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a

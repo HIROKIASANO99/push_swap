@@ -23,5 +23,6 @@ t_list *ft_lstnew(void *content)
 		return (NULL);
 	new->number = ft_atoi((char *)content);
 	new->next = NULL;
+				printf("number=%d\n" ,new->number);
 	return(new);
 }
