@@ -2,6 +2,8 @@
 #define PUSH_SWAP_H
 
 
+#include"../libft/libft.h"
+#include"../ft_printf/include/ft_printf.h"
 #include<unistd.h>
 #include<stdlib.h>
 

@@ -1,6 +1,6 @@
 
 INCLUDE	= ./include
-NAME	= p_w
+NAME	= HIROKIASANO
 SRCS	= \
 		main.c
 OBJS	= $(SRCS:.c=.o)

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../include/push_swap.h"
 
 static int	ft_count_str(char const *s, char c)
 {
@@ -110,7 +111,6 @@ char	**result_free(char const *s, char c,char **result, int count_str)
 		}
 		i++;
 	}
-	printf("sssssssss---------------\n");
 	add_char_to_string((char *)s, result, c);
 	return (result);
 }
@@ -122,8 +122,13 @@ char	**ft_split(char const *s, char c,int *get_count_str)
 	char	**buf;
 
 	result = NULL;
+	if(!ft_error_strcheck(s))
+		return(0);
 	if (!s)
-		return (NULL);
+	{	
+		ft_printf("Error\n");
+		return (0);
+	}
 	if (*s == '\0')
 	{
 		buf = (char **)malloc(sizeof(char *) * 1);

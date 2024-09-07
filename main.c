@@ -1,20 +1,14 @@
 #include"./include/push_swap.h"
-#include"./libft/libft.h"
-#include"./ft_printf/include/ft_printf.h"
-#include<stdio.h>
 
 void add_to_stack_a(int argc, char **strs, t_list **stack_a)
 {
 	int i;
 	t_list *add_stack;
 	i = 0;
-	printf("文字列[%d]  ",i);
 	*stack_a = ft_lstnew(strs[i]);
 	i++;
-	printf("argc=%d\n",argc);
 	while(i < argc)
 		{
-			printf("文字列[%d]  ",i);
 			add_stack = ft_lstnew(strs[i]);
 			ft_lstadd_back(stack_a, add_stack);
 			i++;
@@ -28,16 +22,13 @@ int main(int argc, char **argv)
 	int		count_str;
 
 	if(argc < 2)
-		return(0);
+		return(ft_printf("Error\n"));
 	stack_a = NULL;
 	count_str = 0;
 	if(argc == 2)
 	{
-	printf("main---------------\n");
 		strs = ft_split(argv[1], ' ', &count_str); 
-	printf("main---------------\n");
 		add_to_stack_a(count_str, strs, &stack_a);
-	printf("main---------------\n");
 	}
 	else
 	{

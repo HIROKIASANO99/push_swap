@@ -25,7 +25,11 @@ int		number;
 struct	s_list *next;
 }	t_list;
 
+#  define ERROR "Error\n"
+
 char    **ft_split(char const *s, char c,int *get_count_str);
+int		ft_error_strcheck(const char *str);
+
 void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
