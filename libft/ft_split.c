@@ -122,8 +122,6 @@ char	**ft_split(char const *s, char c,int *get_count_str)
 	char	**buf;
 
 	result = NULL;
-	if(!ft_error_strcheck(s))
-		return(0);
 	if (!s)
 	{	
 		ft_printf("Error\n");

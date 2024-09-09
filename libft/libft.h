@@ -28,7 +28,8 @@ struct	s_list *next;
 #  define ERROR "Error\n"
 
 char    **ft_split(char const *s, char c,int *get_count_str);
-int		ft_error_strcheck(const char *str);
+int		ft_error_intcheck(const char *str);
+int		ft_error_dup_int(int chkbox[], int number, int j);
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(int c);

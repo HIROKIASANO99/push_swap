@@ -1,19 +1,28 @@
 #include"./include/push_swap.h"
 
-void add_to_stack_a(int argc, char **strs, t_list **stack_a)
+int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 {
 	int i;
 	t_list *add_stack;
+	int error_dup_int[count_int];
+
+	
 	i = 0;
 	*stack_a = ft_lstnew(strs[i]);
+	if(!ft_error_dup_int(error_dup_int ,(*stack_a)->number, i))
+		return(0);
 	i++;
-	while(i < argc)
+	while(i < count_int)
 		{
 			add_stack = ft_lstnew(strs[i]);
 			ft_lstadd_back(stack_a, add_stack);
 			i++;
+			if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
+				return(0);
 		}
-	return;
+//	int error_dup_int[count_int]をふりー
+		printf("count_int = %d\n",count_int);
+	return(1);
 }
 int main(int argc, char **argv)
 {
@@ -28,15 +37,16 @@ int main(int argc, char **argv)
 	if(argc == 2)
 	{
 		strs = ft_split(argv[1], ' ', &count_str); 
-		add_to_stack_a(count_str, strs, &stack_a);
+		if(!add_to_stack_a(count_str, strs, &stack_a))
+			return(0);
 	}
 	else
 	{
 		argv++;
-		add_to_stack_a(argc - 1, argv, &stack_a);
+		if(!add_to_stack_a(argc - 1, argv, &stack_a))
+			return(0);
 	}
-	printf("count_str=%d\n" ,count_str);
-	printf("\n\n");
+
 	while(stack_a != NULL)
 	{
 		ft_printf("stack_a_number ==%d\n",stack_a->number);

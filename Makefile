@@ -2,7 +2,7 @@
 INCLUDE	= ./include
 NAME	= HIROKIASANO
 SRCS	= \
-		main.c
+		main.c error.c
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 
 CFLG	= -Wall -Wextra -Werror

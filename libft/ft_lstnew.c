@@ -18,11 +18,13 @@ t_list *ft_lstnew(void *content)
 {
 	t_list	*new;
 	
+	if(!ft_error_intcheck(content))
+		return(NULL);
 	new=(t_list *)malloc(sizeof(t_list));
 	if(!new)
 		return (NULL);
 	new->number = ft_atoi((char *)content);
 	new->next = NULL;
-				printf("number=%d\n" ,new->number);
+				printf("new->number=%d\n" ,new->number);
 	return(new);
 }
