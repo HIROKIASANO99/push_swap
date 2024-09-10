@@ -20,7 +20,6 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 			if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
 				return(0);
 		}
-//	int error_dup_int[count_int]をふりー
 		printf("count_int = %d\n",count_int);
 	return(1);
 }

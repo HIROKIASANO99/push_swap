@@ -31,31 +31,28 @@ static int	skip_and_minus_cheak(int sign, const char *str)
 	return (sign);
 }
 
-static int	check_overflow(long long num, long long num2)
+static int	check_overflow(long long num)
 {
-	if (num <= 0 && num2 != 0)
-		return (1);
-	return (0);
+	if ((num > INT_MAX) || (INT_MIN > num))
+	{
+		printf("Error\n");
+		return (0);
+	}
+	return (1);
 }
 
-static int	a(int minus)
-{
-	if (minus == 1)
-		return (-1);
-	return (0);
-}
 
 int	ft_atoi(char *str)
 {
 	int			i;
 	int			sign;
 	long long	num;
-	long long	num2;
+
 
 	i = 0;
 	sign = 1;
 	num = 0;
-	num2 = 0;
+	
 	sign = skip_and_minus_cheak(sign, str);
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
@@ -65,34 +62,34 @@ int	ft_atoi(char *str)
 	{
 		num = (num * 10) + (str[i] - '0');
 		i++;
-		if (check_overflow(num, num2))
-			return (a(sign));
-		num2 = num;
+		if (!check_overflow(num))
+			return(0);
 	}
-	return (sign * (int)num);
+	return (sign * (num));
 }
 
 // int main() {
-//     const char *str1 = "1234";
-//     const char *str2 = "21474836484";
-//     const char *str3 = "0";
-
-//     int num1 = atoi(str1);
-//     int num2 = atoi(str2);
-//     int num3 = atoi(str3);
-
-//     printf("Number1: %d\n", num1);
-//     printf("Number2: %d\n", num2);
-//     printf("Number3: %d\n", num3);
-
-//     int ft_num1 = ft_atoi(str1);
-//     int ft_num2 = ft_atoi(str2);
-//     int ft_num3 = ft_atoi(str3);
-
-//     printf("ft_Number1: %d\n", ft_num1);
-//     printf("ft_Number2: %d\n", ft_num2);
-//     printf("ft_Number3: %d\n", ft_num3);
-
-//     printf("max=%d,min=%d\n",INT_MAX,INT_MIN);
+//      char *str2 = "1234";
+//      char *str3 = "2147483649";
+//      char *str = "-2147483649";
+//
+//     int num = atoi(str);
+////	int num2 = atoi(str2);
+////	int num3 = atoi(str3);
+//
+//	printf("str:		%s\n",str);
+//	printf("Number:	%d\n", num);
+////	printf("Number2: %d\n", num2);
+////	printf("Number3: %d\n", num3);
+//
+//     int ft_num = ft_atoi(str);
+////	int ft_num2 = ft_atoi(str2);
+////	int ft_num3 = ft_atoi(str3);
+//
+//     printf("ft_Number:	%d\n", ft_num);
+////     printf("ft_Number2: %d\n", ft_num2);
+////     printf("ft_Number3: %d\n", ft_num3);
+//
+//     printf(">>>>>>>>>>>>>>>\nmax=		%d\nmin=		%d\n",INT_MAX,INT_MIN);
 //     return (0);
 // }
