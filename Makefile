@@ -5,7 +5,7 @@ SRCS	= \
 		main.c error.c
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 
-CFLG	= -Wall -Wextra -Werror
+CFLG	= -Wall -Wextra -Werror -g 
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a

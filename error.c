@@ -1,5 +1,5 @@
-#include"./include/push_swap.h"
 #include "./libft/libft.h"
+#include"./ft_printf/include/ft_printf.h"
 
  
 int ft_error_dup_int(int chkbox[], int number, int j)

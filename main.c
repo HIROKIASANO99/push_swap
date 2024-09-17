@@ -9,13 +9,23 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	
 	i = 0;
 	*stack_a = ft_lstnew(strs[i]);
+	printf("------------\n");
 	if(!ft_error_dup_int(error_dup_int ,(*stack_a)->number, i))
+		{
+	printf("------------\n");
 		return(0);
+		}
 	i++;
 	while(i < count_int)
 		{
 			add_stack = ft_lstnew(strs[i]);
+			if(!add_stack)
+				{
+					i++;
+					continue;
+				}
 			ft_lstadd_back(stack_a, add_stack);
+			
 			i++;
 			if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
 				return(0);
