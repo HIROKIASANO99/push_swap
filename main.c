@@ -22,7 +22,7 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 			if(!add_stack)
 				{
 					i++;
-					continue;
+					return(0);
 				}
 			ft_lstadd_back(stack_a, add_stack);
 			

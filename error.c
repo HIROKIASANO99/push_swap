@@ -31,12 +31,12 @@ int ft_error_intcheck(const char *str)
 	{
 	     if ((str[i] < '0' || str[i] > '9') && str[i] != ' ' && str[i] != '-')
         {
-            ft_printf("Error\n");
+            ft_printf("0Error\n");
             return (0);
         }
         if (str[i] == '-' && (i != 0 && str[i - 1] != ' '))
         {
-            ft_printf("Error\n");
+            ft_printf("1Error\n");
             return (0);
         }
 		i++;
