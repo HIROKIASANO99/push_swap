@@ -20,8 +20,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if(*lst == NULL || new == NULL)
 		return;
 	list = *lst;
+	int i = 0;
 	while(list->next != NULL)
+	{
+		printf("kkkk == %d == %d\n",i,list->number);
 		list = list->next;
+		i++;
+	}
 	list->next = new; 
 	return;
 }

@@ -5,16 +5,11 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	int i;
 	t_list *add_stack;
 	int error_dup_int[count_int];
-
 	
 	i = 0;
 	*stack_a = ft_lstnew(strs[i]);
-	printf("------------\n");
 	if(!ft_error_dup_int(error_dup_int ,(*stack_a)->number, i))
-		{
-	printf("------------\n");
 		return(0);
-		}
 	i++;
 	while(i < count_int)
 		{

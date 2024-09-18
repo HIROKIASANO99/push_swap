@@ -22,6 +22,7 @@
 typedef struct s_list
 {
 int		number;
+int		order;
 struct	s_list *next;
 }	t_list;
 
