@@ -23,9 +23,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	int i = 0;
 	while(list->next != NULL)
 	{
-		printf("kkkk == %d == %d\n",i,list->number);
 		list = list->next;
 		i++;
+		printf("jjjj == %d == %d\n",i,list->number);
 	}
 	list->next = new; 
 	return;
