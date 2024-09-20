@@ -51,6 +51,8 @@ int main(int argc, char **argv)
 			return(0);
 	}
 
+	ft_sortstack(stack_a);
+
 	while(stack_a != NULL)
 	{
 		ft_printf("stack_a_number ==%d\n",stack_a->number);
