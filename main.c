@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 			return(0);
 	}
 
-	ft_sortstack(stack_a);
+//	ft_sortstack(stack_a);
 
 	while(stack_a != NULL)
 	{

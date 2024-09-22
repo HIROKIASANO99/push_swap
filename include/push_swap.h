@@ -8,11 +8,12 @@
 #include<stdlib.h>
 
 //command.c
-ft_command_swap(t_list *node);
-ft_command_push(t_list *inputstack, t_list *outputstack);
+void	ft_command_swap(t_list *node);
+void	ft_command_push(t_list *inputstack, t_list *outputstack);
+void	ft_command_rotate(t_list **stack);
 
 //sort.c
-ft_sortstack(t_list *stack_a);
+void	ft_sortstack(t_list *stack_a);
 
 #endif
 
