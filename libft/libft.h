@@ -23,6 +23,7 @@ typedef struct s_list
 {
 int		number;
 int		order;
+int		sixgroup;
 struct	s_list *next;
 }	t_list;
 
