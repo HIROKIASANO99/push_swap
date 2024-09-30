@@ -1,25 +1,38 @@
 #include"./include/push_swap.h"
 
-void	ft_group_catgory(t_list	*stack_a)
+void	ft_group_catgory(t_list	**stack_a ,int count_str)
 {
 	t_list *head;
-	int group;
-	int count_int;
-	int div_int_six;
-	int	rem;
+	int		div_six_size;
+	int		ori_size;
+	int		i;
+	int		curint;
 
-	head = stack_a;
-	count_int = ft_lstsize(stack_a);
-	div_int_six = count_int / 6;
-	rem = count_int % 6;
-	while()
-
-	while(stack_a != NULL)
-	{	
-		
-		list = list->next;
+	head = *stack_a;
+	div_six_size = count_str / 6;
+	ori_size = div_six_size;
+	i = 1;
+	curint = 1;
+	while(curint <= count_str)
+	{
+		if((*stack_a)->order == curint)
+		{
+			(*stack_a)->group = i;
+			div_six_size--;
+			if(div_six_size == 0)
+			{
+				i++;
+				*stack_a = head;
+				div_six_size = ori_size;
+				if(i == 6)
+					div_six_size = div_six_size + (count_str % 6);
+				curint++;
+				continue;
+			}
+			curint++;
+		}
+		*stack_a = (*stack_a)->next;
 	}
-
 }
 
 int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
@@ -48,8 +61,9 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	}
 
 //		printf("count_int = %d\n",count_int);
-	return(1);
+	return(count_int);
 }
+
 int main(int argc, char **argv)
 {
 	t_list *stack_a;
@@ -63,21 +77,23 @@ int main(int argc, char **argv)
 	if(argc == 2)
 	{
 		strs = ft_split(argv[1], ' ', &count_str); 
-		if(!add_to_stack_a(count_str, strs, &stack_a))
-			return(0);
+		count_str = add_to_stack_a(count_str, strs, &stack_a);
 	}
 	else
 	{
 		argv++;
-		if(!add_to_stack_a(argc - 1, argv, &stack_a))
-			return(0);
+		count_str = add_to_stack_a(argc - 1, argv, &stack_a);
 	}
-	ft_group_catgory(&stack_a);
+	if(count_str == 0)
+		return(0);
+	ft_group_catgory(&stack_a,count_str);
 //	ft_sortstack(stack_a);
+	int i = 1;
 	while(stack_a != NULL)
 	{
-		ft_printf("stack_a_number ==%d\n",stack_a->number);
+		printf("stack_a[%d]	: number =	%d	: order =	%d	: group =	%d\n", i, stack_a->number, stack_a->order, stack_a->group);
 		stack_a = stack_a->next;
+		i++;
 	}
 	return(0);
 }

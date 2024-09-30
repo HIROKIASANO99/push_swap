@@ -4,10 +4,10 @@
 
 
 
-void	ft_sortstack(t_list *stack_a)
-{
-	t_list *stack_b;
-	
-
-
-}
+//void	ft_sortstack(t_list *stack_a)
+//{
+//	t_list *stack_b;
+//	
+//
+//
+//}

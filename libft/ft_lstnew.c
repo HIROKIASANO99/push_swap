@@ -26,6 +26,6 @@ t_list *ft_lstnew(void *content)
 	new->number = ft_atoi((char *)content);
 	new->order = 1;
 	new->next = NULL;
-				printf("new->number=%d\n" ,new->number);
+//				printf("new->number=%d\n" ,new->number);
 	return(new);
 }

@@ -6,6 +6,8 @@
 #include"../ft_printf/include/ft_printf.h"
 #include<unistd.h>
 #include<stdlib.h>
+//main.c
+void	ft_group_catgory(t_list	**stack_a ,int count_str);
 
 //command.c
 void	ft_command_swap(t_list *node);
