@@ -1,5 +1,27 @@
 #include"./include/push_swap.h"
 
+void	ft_group_catgory(t_list	*stack_a)
+{
+	t_list *head;
+	int group;
+	int count_int;
+	int div_int_six;
+	int	rem;
+
+	head = stack_a;
+	count_int = ft_lstsize(stack_a);
+	div_int_six = count_int / 6;
+	rem = count_int % 6;
+	while()
+
+	while(stack_a != NULL)
+	{	
+		
+		list = list->next;
+	}
+
+}
+
 int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 {
 	int i;
@@ -12,20 +34,20 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 		return(0);
 	i++;
 	while(i < count_int)
+	{
+		add_stack = ft_lstnew(strs[i]);
+		if(!add_stack)
 		{
-			add_stack = ft_lstnew(strs[i]);
-			if(!add_stack)
-				{
-					i++;
-					return(0);
-				}
-			ft_lstadd_back(stack_a, add_stack);
-			
 			i++;
-			if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
-				return(0);
+			return(0);
 		}
-		printf("count_int = %d\n",count_int);
+		ft_lstadd_back(stack_a, add_stack);		
+		i++;
+		if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
+			return(0);
+	}
+
+//		printf("count_int = %d\n",count_int);
 	return(1);
 }
 int main(int argc, char **argv)
@@ -50,9 +72,8 @@ int main(int argc, char **argv)
 		if(!add_to_stack_a(argc - 1, argv, &stack_a))
 			return(0);
 	}
-
+	ft_group_catgory(&stack_a);
 //	ft_sortstack(stack_a);
-
 	while(stack_a != NULL)
 	{
 		ft_printf("stack_a_number ==%d\n",stack_a->number);
