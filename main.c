@@ -1,5 +1,19 @@
 #include"./include/push_swap.h"
 
+int ft_group_noting(t_list **stack_a)
+{
+	t_list *head;
+
+	head = *stack_a;
+	while(*stack_a != NULL)
+	{
+		(*stack_a)->group = 1;
+		*stack_a =(*stack_a)->next;
+	}
+	*stack_a = head;
+	return(7);
+}
+
 void	ft_group_catgory(t_list	**stack_a ,int count_str)
 {
 	t_list *head;
@@ -13,6 +27,8 @@ void	ft_group_catgory(t_list	**stack_a ,int count_str)
 	ori_size = div_six_size;
 	i = 1;
 	curint = 1;
+	if(div_six_size == 0)
+		curint = ft_group_noting(stack_a);
 	while(curint <= count_str)
 	{
 		if((*stack_a)->order == curint)
@@ -22,14 +38,13 @@ void	ft_group_catgory(t_list	**stack_a ,int count_str)
 			if(div_six_size == 0)
 			{
 				i++;
-				*stack_a = head;
 				div_six_size = ori_size;
 				if(i == 6)
 					div_six_size = div_six_size + (count_str % 6);
-				curint++;
-				continue;
 			}
 			curint++;
+			*stack_a = head;
+			continue;
 		}
 		*stack_a = (*stack_a)->next;
 	}

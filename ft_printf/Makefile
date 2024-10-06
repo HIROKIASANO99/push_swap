@@ -20,7 +20,7 @@ OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAG = -Wall -Wextra -Werror 
 
-LIBFT_PATH = ./Libft
+LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
 
 $(NAME) : $(OBJS)
