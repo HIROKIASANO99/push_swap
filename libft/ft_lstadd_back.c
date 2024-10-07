@@ -20,7 +20,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if(*lst == NULL || new == NULL)
 		return;
 	list = *lst;
-//	int i = 1;
 	while(list->next != NULL)
 	{
 
@@ -28,17 +27,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			list->order++;
 		if(list->number < new->number)
 			new->order++;
-//		printf("list[%d] = list->number = %d ---- list->order ==%d\n",i,list->number,list->order);
 		list = list->next;
-//		i++;
-
 	}
 	if(list->number > new->number)
 		list->order++;
 	if(list->number < new->number)
 		new->order++;
-//	printf("list[%d] == list->number = %d ---- list->order ==%d\n",i,list->number,list->order);
-//	printf("list[%d] == list->number = %d ---- list->order ==%d\n",i + 1,new->number,new->order);
 	list->next = new; 
 	return;
 }

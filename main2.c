@@ -11,51 +11,44 @@ int ft_group_noting(t_list **stack_a)
 		*stack_a =(*stack_a)->next;
 	}
 	*stack_a = head;
-	return(42);
+	return(7);
 }
 
-void    ft_group_catgory2(t_list **stack_a, t_list *head, int count_str, int ori_size, int *div_six_size, int *i, int *curint)
+void	ft_group_catgory(t_list	**stack_a ,int count_str)
 {
-    while (*curint <= count_str)
-    {
-        if ((*stack_a)->order == *curint)
-        {
-            (*stack_a)->group = *i;
-            (*div_six_size)--;
-            if (*div_six_size == 0)
-            {
-                (*i)++;
-                *div_six_size = ori_size;
-                if (*i == 6)
-                    *div_six_size += (count_str % 6);
-            }
-            (*curint)++;
-            *stack_a = head;
-            continue;
-        }
-        *stack_a = (*stack_a)->next;
-    }
+	t_list *head;
+	int		div_six_size;
+	int		ori_size;
+	int		i;
+	int		curint;
+
+	head = *stack_a;
+	div_six_size = count_str / 6;
+	ori_size = div_six_size;
+	i = 1;
+	curint = 1;
+	if(div_six_size == 0)
+		curint = ft_group_noting(stack_a);
+	while(curint <= count_str)
+	{
+		if((*stack_a)->order == curint)
+		{
+			(*stack_a)->group = i;
+			div_six_size--;
+			if(div_six_size == 0)
+			{
+				i++;
+				div_six_size = ori_size;
+				if(i == 6)
+					div_six_size = div_six_size + (count_str % 6);
+			}
+			curint++;
+			*stack_a = head;
+			continue;
+		}
+		*stack_a = (*stack_a)->next;
+	}
 }
-
-void    ft_group_catgory(t_list **stack_a, int count_str)
-{
-    t_list *head;
-    int     div_six_size;
-    int     ori_size;
-    int     i;
-    int     curint;
-
-    head = *stack_a;
-    div_six_size = count_str / 6;
-    ori_size = div_six_size;
-    i = 1;
-    curint = 1;
-    if (div_six_size == 0)
-        curint = ft_group_noting(stack_a);
-    ft_group_catgory2(stack_a, head, count_str, ori_size, &div_six_size, &i, &curint);
-}
-
-
 
 int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 {
@@ -81,6 +74,8 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 		if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
 			return(0);
 	}
+
+//		printf("count_int = %d\n",count_int);
 	return(count_int);
 }
 
