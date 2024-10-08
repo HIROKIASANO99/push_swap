@@ -37,7 +37,14 @@ void	ft_command_rotate(t_list **stack)
 	first_node = *stack;
 	*stack = first_node->next;
 	first_node->next = NULL;
-	last_node = ft_lstlast(*stack);
+	last_node = *stack;
+	int count = 0;
+	while(last_node->next != NULL)
+	{
+		last_node = last_node->next;
+		count++;
+		printf("count = %d\n", count);
+	}
 	last_node->next = first_node;
 	return;
 }

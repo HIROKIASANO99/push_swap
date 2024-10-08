@@ -24,22 +24,28 @@ void	ft_first_sort(t_list **stack_a, t_list **stack_b)
 }
 
 //デバック用関数
-void print_list(t_list *lst, char c)
-{
-    int index = 1;
-    while (lst != NULL)
-    {
-        printf("stack_%c[%d]	: number = %d	: order = %d	: group = %d\n",
-               c, index, lst->number, lst->order, lst->group);
-        lst = lst->next;
-        index++;
-    }
-}
+//______________________________________________________________________________________________________//
+//------------------------------------------------------------------------------------------------------//
+void print_list(t_list *lst, char c)									
+{													
+    int index = 1;											
+    while (lst != NULL)											
+    {													
+        printf("stack_%c[%d]	: number = %d	: order = %d	: group = %d\n",			
+               c, index, lst->number, lst->order, lst->group);						
+        lst = lst->next;										
+        index++;											
+    }													
+}													
+//------------------------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------------//
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
 void	ft_sortstack(t_list *stack_a)
 {
 	t_list *stack_b;		
 	ft_first_sort(&stack_a, &stack_b);
 	print_list(stack_a, 'a');
+	printf("\n");
 	print_list(stack_b, 'b');
 }
