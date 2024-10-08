@@ -29,6 +29,7 @@ struct	s_list *next;
 
 #  define ERROR "Error\n"
 
+void	ft_lstadd_back2(t_list **lst, t_list *new);
 char    **ft_split(char const *s, char c,int *get_count_str);
 int		ft_error_intcheck(const char *str);
 int		ft_error_dup_int(int chkbox[], int number, int j);

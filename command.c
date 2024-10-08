@@ -23,7 +23,7 @@ void	ft_command_push(t_list **ipstack, t_list **opstack)
 	temp = *opstack;
 	*opstack = (*opstack)->next;
 	temp->next = NULL;
-	ft_lstadd_back(ipstack, temp);
+	ft_lstadd_front(ipstack, temp);
 	return;
 }
 
@@ -35,7 +35,7 @@ void	ft_command_rotate(t_list **stack)
 	if(!stack || !*stack || !(*stack)->next)
 		return;
 	first_node = *stack;
-	*stack = (*stack)->next;
+	*stack = first_node->next;
 	first_node->next = NULL;
 	last_node = ft_lstlast(*stack);
 	last_node->next = first_node;

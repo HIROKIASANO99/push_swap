@@ -84,6 +84,7 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	return(count_int);
 }
 
+
 int main(int argc, char **argv)
 {
 	t_list *stack_a;
@@ -107,14 +108,7 @@ int main(int argc, char **argv)
 	if(count_str == 0)
 		return(0);
 	ft_group_catgory(&stack_a,count_str);
-//	ft_sortstack(stack_a);
-	int i = 1;
-	while(stack_a != NULL)
-	{
-		printf("stack_a[%d]	: number =	%d	: order =	%d	: group =	%d\n", i, stack_a->number, stack_a->order, stack_a->group);
-		stack_a = stack_a->next;
-		i++;
-	}
+	ft_sortstack(stack_a);
 	return(0);
 }
 
