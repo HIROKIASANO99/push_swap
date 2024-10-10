@@ -108,6 +108,7 @@ int main(int argc, char **argv)
 	if(count_str == 0)
 		return(0);
 	ft_group_catgory(&stack_a,count_str);
+//print_list(stack_a, 'a');									
 	ft_sortstack(stack_a);
 	return(0);
 }

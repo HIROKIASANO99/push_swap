@@ -27,6 +27,11 @@ int		group;
 struct	s_list *next;
 }	t_list;
 
+//typedef struct s_address;
+//{
+//t_list *head;
+//}	t_adsress;
+
 #  define ERROR "Error\n"
 
 void	ft_lstadd_back2(t_list **lst, t_list *new);
