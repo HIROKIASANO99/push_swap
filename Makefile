@@ -1,6 +1,6 @@
 
 INCLUDE	= ./include
-NAME	= HIROKIASANO
+NAME	= push_swap
 SRCS	= \
 		main.c error.c command.c sort.c
 OBJS	= $(SRCS:.c=.o)

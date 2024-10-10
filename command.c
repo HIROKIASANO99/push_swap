@@ -43,7 +43,6 @@ void	ft_command_rotate(t_list **stack)
 	{
 		last_node = last_node->next;
 		count++;
-		printf("count = %d\n", count);
 	}
 	last_node->next = first_node;
 	return;

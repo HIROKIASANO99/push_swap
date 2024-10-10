@@ -6,21 +6,27 @@
 
 void	ft_first_sort(t_list **stack_a, t_list **stack_b ,int top, int bottom)
 {
-printf("address = %p\n",stack_b);	
 	t_list **current ;
 	current = stack_a;
 	while(*current != NULL)
 	{
-	printf("%d = current\n",(*current)->number);
 		if((*current)->group == bottom)
 		{
 			ft_command_push(stack_b, current);
+			ft_printf("pb\n");
 			ft_command_rotate(stack_b);
+			ft_printf("rb\n");
 		}
 		else if((*current)->group == top)
+		{
 			ft_command_push(stack_b, current);
+			ft_printf("pb\n");	
+		}
 		else
+		{
 			current = &(*current)->next;
+			ft_printf("ra\n");	
+		}
 	}
 }
 
@@ -51,7 +57,7 @@ void	ft_sortstack(t_list *stack_a)
 	ft_first_sort(&stack_a, &stack_b, 4, 3);
 	ft_first_sort(&stack_a, &stack_b, 5, 2);
 	ft_first_sort(&stack_a, &stack_b, 6, 1);
-	print_list(stack_a, 'a');
-	printf("\n");
-	print_list(stack_b, 'b');
+//	print_list(stack_a, 'a');
+//	printf("\n");
+//	print_list(stack_b, 'b');
 }
