@@ -56,7 +56,7 @@ void	ft_sortstack(t_list *stack_a)
 	//address_a.head = stack_a;
 	ft_first_sort(&stack_a, &stack_b, 4, 3);
 	ft_first_sort(&stack_a, &stack_b, 5, 2);
-	ft_first_sort(&stack_a, &stack_b, 6, 1);
+	ft_first_sort(&stack_a, &stack_b, 0, 1);
 //	print_list(stack_a, 'a');
 //	printf("\n");
 //	print_list(stack_b, 'b');
