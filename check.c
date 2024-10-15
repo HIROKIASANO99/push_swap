@@ -2,7 +2,7 @@
 
 #include"./include/push_swap.h"
 
-void	ft_check_sort(t_list *stack);
+void	ft_check_a(t_list *stack)
 {
 	t_list *pre_stack;
 
@@ -10,13 +10,13 @@ void	ft_check_sort(t_list *stack);
 	stack = stack->next;
 	while(stack != NULL)
 	{
-		if(pre_stack->order >= stack->order)
+		if(!((pre_stack->order + 1) == stack->order))
 		{
 			break;
 		}	
 		pre_stack = stack;
 		stack = stack->next;
 	}
-	
+	exit(0);
 }
 

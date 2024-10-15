@@ -18,7 +18,12 @@ void	ft_command_rotate(t_list **stack);
 //sort.c
 void	ft_sortstack(t_list *stack_a);
 void	ft_first_sort(t_list **stack_a, t_list **stack_b ,int top, int bottom);
-//デバック
+void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int group);
+
+//check.c
+void	ft_check_a(t_list *stack);
+
+//debug.c
 void print_list(t_list *lst, char c);									
 #endif
 

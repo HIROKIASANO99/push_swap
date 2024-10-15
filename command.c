@@ -14,7 +14,7 @@ void	ft_command_swap(t_list **node)
 	current_node->next = *node; 
 	return;
 }
-
+	
 void	ft_command_push(t_list **ipstack, t_list **opstack)
 {
 	t_list *temp;
