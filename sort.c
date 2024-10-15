@@ -5,7 +5,10 @@
 
 int	ft_find_max_min(t_list **stack, int grp ,int *maxnumber, int *minnumber)
 {
-	while((*stack) != NULL)
+	t_list *top;
+
+	top = *stack;
+	while(*stack != NULL)
 	{
 		if((*stack)->group == grp)
 		{
@@ -16,6 +19,7 @@ int	ft_find_max_min(t_list **stack, int grp ,int *maxnumber, int *minnumber)
 		}
 		(*stack) = (*stack)->next;
 	}
+	*stack = top;
 	return(0);
 }
 
@@ -23,13 +27,11 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int group)
 {
 	int maxnumber;
 	int minnumber;
-
 	maxnumber = 0;
 	minnumber = 500;
-	*stack_a = NULL;
 	ft_find_max_min(stack_b, group, &maxnumber, &minnumber);	
-	printf("maxnumber == %d\n",maxnumber);
-	printf("minnumber == %d\n",minnumber);
+	printf("group[%d]maxnumber == %d\n", group, maxnumber);
+	printf("group[%d]minnumber == %d\n",group, minnumber);
 }
 
 void	ft_first_sort(t_list **stack_a, t_list **stack_b ,int top, int bottom)
@@ -71,9 +73,13 @@ void	ft_sortstack(t_list *stack_a)
 	ft_first_sort(&stack_a, &stack_b, 6, 1);
 
 	ft_second_sort(&stack_a, &stack_b , 6);
+	ft_second_sort(&stack_a, &stack_b , 5);
+	ft_second_sort(&stack_a, &stack_b , 4);
+	ft_second_sort(&stack_a, &stack_b , 3);
+	ft_second_sort(&stack_a, &stack_b , 2);
+	ft_second_sort(&stack_a, &stack_b , 1);
 
+print_list(stack_a, 'a');
+print_list(stack_b, 'b');
 	
-//	print_list(stack_a, 'a');
-//	printf("\n");
-//	print_list(stack_b, 'b');
 }

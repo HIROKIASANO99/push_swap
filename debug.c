@@ -12,4 +12,5 @@ void print_list(t_list *lst, char c)
         lst = lst->next;										
         index++;											
     }													
+printf("\n");
 }													
