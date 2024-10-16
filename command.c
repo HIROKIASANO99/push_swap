@@ -58,7 +58,7 @@ void	ft_command_reverse_rotate(t_list **stack)
 		top_node = top_node->next;
 	}
 	bottom_node->next = NULL;
-	top_node = *stack;
-	*stack = top_node;
+	top_node->next = *stack;
+    *stack = top_node;
 	return;
 }	
