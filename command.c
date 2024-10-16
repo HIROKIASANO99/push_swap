@@ -38,12 +38,8 @@ void	ft_command_rotate(t_list **stack)
 	*stack = first_node->next;
 	first_node->next = NULL;
 	last_node = *stack;
-	int count = 0;
 	while(last_node->next != NULL)
-	{
 		last_node = last_node->next;
-		count++;
-	}
 	last_node->next = first_node;
 	return;
 }
