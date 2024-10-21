@@ -107,6 +107,8 @@ int main(int argc, char **argv)
 	}
 	if(count_str == 0)
 		return(0);
+	if(count_str == 3 || count_str == 5)
+		ft_min_sort(&stack_a ,count_str);
 	ft_group_catgory(&stack_a,count_str);
 //print_list(stack_a, 'a');									
 	ft_sortstack(stack_a, count_str);

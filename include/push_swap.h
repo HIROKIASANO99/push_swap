@@ -19,10 +19,10 @@ void	ft_command_reverse_rotate(t_list **stack);
 //sort.c
 void	ft_sortstack(t_list *stack_a, int size);
 void	ft_first_sort(t_list **stack_a, t_list **stack_b , int top, int bottom);
-//void	ft_first_sort(t_list **stack_a, t_list **stack_b ,int grp);
-//void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int size, int group);
 void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int size);
-//void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int group);
+
+//sort2.c
+void ft_min_sort(t_list **stack_a ,int count_str);
 
 //check.c
 void	ft_check_a(t_list *stack);

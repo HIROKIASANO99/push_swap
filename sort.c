@@ -75,42 +75,6 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int size)
 
 
 
-//	while(groupsize > 0)
-//	{
-//		while((*stack_b)->group == group)
-//		{	
-//			if((*stack_b)->number == maxnumber)
-//			{
-//				ft_command_push(stack_a, stack_b);
-//				ft_printf("pa\n");
-//				printf("maxnumber = %d\n", maxnumber);
-//				maxnumber--;
-//				groupsize--;
-//			}	
-//			ft_command_rotate(stack_b);
-//			ft_printf("rb\n");
-//		}
-//			ft_command_reverse_rotate(stack_b);
-//			ft_printf("rrb\n");
-//////printf("-------------------------\n");
-//		while((*stack_b)->group == group)
-//		{
-//			if((*stack_b)->number == maxnumber)
-//			{
-//				ft_command_push(stack_a, stack_b);
-//				ft_printf("pa\n");
-//				maxnumber--;
-//				groupsize--;
-//			}	
-//			ft_command_reverse_rotate(stack_b);
-//			ft_printf("rrb\n");
-//		}
-//		ft_command_rotate(stack_b);
-//		ft_printf("rb\n");
-//	}
-//////	printf("group[%d]maxnumber ==	%d\n", group, maxnumber);
-//////	printf("group[%d]minnumber ==	%d\n", group, minnumber);
-//////	printf("group[%d]groupsize ==	%d\n", group, groupsize);
 
 
 void	ft_first_sort(t_list **stack_a, t_list **stack_b , int top, int bottom)
@@ -140,34 +104,6 @@ void	ft_first_sort(t_list **stack_a, t_list **stack_b , int top, int bottom)
 	}
 }
 
-//void	ft_first_sort(t_list **stack_a, t_list **stack_b ,int grp)
-//{
-//	t_list **current;
-//	int i;
-//
-//	current = stack_a;
-//	i = 1;
-//	while(*current != NULL)
-//	{
-//		if((*current)->group == grp)
-//		{
-//			ft_command_push(stack_b, current);
-//			ft_printf("pb\n");
-//			if(++i % 2 == 0)
-//				continue;
-//			if(i % 2 == 1)
-//			{
-//				ft_command_rotate(stack_b);
-//				ft_printf("rb\n");
-//			}
-//		}
-//		else
-//		{
-//			current = &(*current)->next;
-//			ft_printf("ra\n");	
-//		}
-//	}
-//}
 
 
 
