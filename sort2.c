@@ -44,17 +44,17 @@ void ft_min_sort(t_list **stack_a ,int count_str)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
 	if(pattern == 123 || pattern == 23400)		
-		ft_printf("1\n");		
+		return;		
 	else if(pattern == 132 || pattern == 24300)		
-		ft_printf("2\n");		
+		ft_printf("ra\nsa\nrra");		
 	else if(pattern == 213 || pattern == 32400)		
-		ft_printf("3\n");		
+		ft_printf("sa\n");		
 	else if(pattern == 231 || pattern == 34200)		
-		ft_printf("4\n");		
+		ft_printf("rra\n");		
 	else if(pattern == 321 || pattern == 43200)		
-		ft_printf("5\n");		
+		ft_printf("sa\nrra\n");		
 	else if(pattern == 312 || pattern == 42300)		
-		ft_printf("6\n");		
+		ft_printf("ra\n");		
 	if(count_str == 5)
-		//戻すコマンド
+		ft_printf("pa\npa\n")
 }

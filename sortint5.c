@@ -3,25 +3,25 @@
 #include"./ft_printf/include/ft_printf.h"
 #include"./include/push_swap.h"
 
-int ft_fivesort_second(int box[])
+int ft_fivesort_4th(int box[])
 {
 	int num;
 
-	if(box[1] == 1)
+	if(box[5] == 1)
 	{
+		if(box[1] == 5)
+		
 		if(box[2] == 5)
-		
-		if(box[3] == 5)
 
-		if(box[4] == 5)
+		if(box[3] == 5)
 		
-		if(box[5] == 5)
+		if(box[4] == 5)
 	
 	}
 	
 	return(num);
 }
-int ft_fivesort_third(int box[])
+int ft_fivesort_3rd(int box[])
 {
 	int num;
 
@@ -50,7 +50,7 @@ int ft_fivesort_third(int box[])
 	return(num);
 }
 
-int ft_fivesort_second(int box[])
+int ft_fivesort_2nd(int box[])
 {
 	int num;
 
@@ -97,5 +97,6 @@ int ft_fivesort_first(t_list **stack_a);
 		i = ft_fivesort_2nd(box);
 	if(box[3] == 1 || box[4] == 1)
 		i = ft_fivesort_3rd(box);
-	ft_fivesort_4th(box);
+	if(box[5] == 1)
+		ft_fivesort_4th(box);
 }
