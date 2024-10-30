@@ -26,7 +26,7 @@ void ft_min_sort(t_list **stack_a ,int count_str);
 int ft_order_pattern(t_list **stack_a, int count_str);
 
 //sortint5.c
-int ft_fivesort_1st(t_list **stack_a);
+int ft_fivesort_first(t_list **stack_a);
 
 //check.c
 void	ft_check_a(t_list *stack);

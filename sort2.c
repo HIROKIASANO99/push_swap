@@ -56,5 +56,5 @@ void ft_min_sort(t_list **stack_a ,int count_str)
 	else if(pattern == 312 || pattern == 42300)		
 		ft_printf("ra\n");		
 	if(count_str == 5)
-		ft_printf("pa\npa\n")
+		ft_printf("pa\npa\n");
 }

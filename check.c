@@ -12,7 +12,7 @@ void	ft_check_a(t_list *stack)
 	{
 		if(!((pre_stack->order + 1) == stack->order))
 		{
-			break;
+			return;
 		}	
 		pre_stack = stack;
 		stack = stack->next;
