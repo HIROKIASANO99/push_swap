@@ -9,13 +9,13 @@ int ft_fivesort_4th(int box[])
 
 	if(box[5] == 1)
 	{
-		if(box[1] == 5)
+		if(box[1] == 2)
 		
-		if(box[2] == 5)
+		if(box[2] == 2)
 
-		if(box[3] == 5)
+		if(box[3] == 2)
 		
-		if(box[4] == 5)
+		if(box[4] == 2)
 	
 	}
 	
@@ -27,22 +27,24 @@ int ft_fivesort_3rd(int box[])
 
 	if(box[3] == 1)
 	{
-		if(box[1] == 5)
+		if(box[1] == 2)
 		
-		if(box[2] == 5)
+		if(box[2] == 2)
 
-		if(box[4] == 5)
+		if(box[4] == 2)
 		
-		if(box[5] == 5)
+		if(box[5] == 2)
 	
 	}
 	if(box[4] == 1)
 	{
-		if(box[1] == 5)
+		if(box[1] == 2)
 		
-		if(box[2] == 5)		if(box[3] == 5)
+		if(box[2] == 2)
+
+		if(box[3] == 2)
 		
-		if(box[5] == 5)
+		if(box[5] == 2)
 	
 	}
 	return(num);
@@ -54,24 +56,24 @@ int ft_fivesort_2nd(int box[])
 
 	if(box[1] == 1)
 	{
-		if(box[2] == 5)
+		if(box[2] == 2)
 		
-		if(box[3] == 5)
+		if(box[3] == 2)
 
-		if(box[4] == 5)
+		if(box[4] == 2)
 		
-		if(box[5] == 5)
+		if(box[5] == 2)
 	
 	}
 	if(box[2] == 1)
 	{
-		if(box[1] == 5)
+		if(box[1] == 2)
 		
-		if(box[3] == 5)
+		if(box[3] == 2)
 
-		if(box[4] == 5)
+		if(box[4] == 2)
 		
-		if(box[5] == 5)
+		if(box[5] == 2)
 	
 	}
 	return(num);
@@ -88,7 +90,7 @@ int ft_fivesort_first(t_list **stack_a)
 	while((*stack_a) != NULL)
 	{
 		box[i] = stack->order;
-		//1,5を消すif文
+		//1,2を消すif文
 		stack = stack->next;
 		i++;
 	}
