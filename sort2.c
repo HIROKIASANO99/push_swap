@@ -43,17 +43,17 @@ void ft_min_sort(t_list **stack_a ,int count_str)
 	if(count_str == 5)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
-	if(pattern == 123 || pattern == 23400)		
+	if(pattern == 123 || pattern == 34500)		
 		return;		
-	else if(pattern == 132 || pattern == 24300)		
+	else if(pattern == 132 || pattern == 35400)		
 		ft_printf("ra\nsa\nrra");		
-	else if(pattern == 213 || pattern == 32400)		
+	else if(pattern == 213 || pattern == 43500)		
 		ft_printf("sa\n");		
-	else if(pattern == 231 || pattern == 34200)		
+	else if(pattern == 231 || pattern == 45300)		
 		ft_printf("rra\n");		
-	else if(pattern == 321 || pattern == 43200)		
+	else if(pattern == 321 || pattern == 54300)		
 		ft_printf("sa\nrra\n");		
-	else if(pattern == 312 || pattern == 42300)		
+	else if(pattern == 312 || pattern == 53400)		
 		ft_printf("ra\n");		
 	if(count_str == 5)
 		ft_printf("pa\npa\n");
