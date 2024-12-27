@@ -5,78 +5,71 @@
 
 int ft_fivesort_4th(int box[])
 {
-	int num;
-
 	if(box[5] == 1)
 	{
 		if(box[1] == 2)
-		
+			ft_printf("rra\npb\npb\n");		
 		if(box[2] == 2)
-
+			ft_printf("rra\npb\nrra\npb\nrb\n");		
 		if(box[3] == 2)
-		
+			ft_printf("rra\npb\nrra\nrra\npb\n");		
 		if(box[4] == 2)
-	
+			ft_printf("rra\npb\nrra\npb\n");		
 	}
-	
-	return(num);
+	return;
 }
-int ft_fivesort_3rd(int box[])
+void ft_fivesort_3rd(int box[])
 {
-	int num;
-
 	if(box[3] == 1)
 	{
 		if(box[1] == 2)
-		
+			ft_printf("pb\nra\npb\nrb\n");
 		if(box[2] == 2)
-
+			ft_printf("ra\nsa\npb\npb\n");
 		if(box[4] == 2)
-		
+			ft_printf("ra\nra\npb\npb\n");
 		if(box[5] == 2)
-	
+			ft_printf("ra\nra\npb\nra\npb\npb\n");
 	}
 	if(box[4] == 1)
 	{
 		if(box[1] == 2)
-		
+			ft_printf("pb\nra\nra\npb\nrb\n");
 		if(box[2] == 2)
-
+			ft_printf("ra\npb\nra\npb\nrb\n");
 		if(box[3] == 2)
-		
+			ft_printf("rra\nrra\npb\nrra\npb\n");
 		if(box[5] == 2)
-	
+			ft_printf("rra\nrra\npb\npb\n");
 	}
-	return(num);
+	return;
 }
 
-int ft_fivesort_2nd(int box[])
+void ft_fivesort_2nd(int box[])
 {
-	int num;
-
 	if(box[1] == 1)
 	{
 		if(box[2] == 2)
-		
+			ft_printf("pb\npb\n");
 		if(box[3] == 2)
-
+			ft_printf("pb\nra\npb\n");
 		if(box[4] == 2)
-		
+			ft_printf("pb\nra\nra\npb\n");
 		if(box[5] == 2)
-	
+			ft_printf("pb\nrra\npb\n");
 	}
 	if(box[2] == 1)
 	{
 		if(box[1] == 2)
-		
+			ft_printf("pb\npb\nsb\n");
 		if(box[3] == 2)
-
+			ft_printf("ra\npb\nsb\n");
 		if(box[4] == 2)
-		
+			ft_printf("ra\npb\nra\npb\n");
 		if(box[5] == 2)
-	
+			ft_printf("ra\npb\nra\nra\npb\n");
 	}
-	return(num);
+	return;
 }
 
 int ft_fivesort_first(t_list **stack_a)
@@ -95,9 +88,9 @@ int ft_fivesort_first(t_list **stack_a)
 		i++;
 	}
 	if(box[1] == 1 || box[2] == 1)
-		i = ft_fivesort_2nd(box);
+		ft_fivesort_2nd(box);
 	else if(box[3] == 1 || box[4] == 1)
-		i = ft_fivesort_3rd(box);
+		ft_fivesort_3rd(box);
 	else if(box[5] == 1)
 		ft_fivesort_4th(box);
 }
