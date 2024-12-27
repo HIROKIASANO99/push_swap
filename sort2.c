@@ -48,13 +48,14 @@ void ft_min_sort(t_list **stack_a ,int count_str)
 	else if(pattern == 132 || pattern == 35400)		
 		ft_printf("ra\nsa\nrra");		
 	else if(pattern == 213 || pattern == 43500)		
-		ft_printf("sa\n");		
+		ft_printf("sa");		
 	else if(pattern == 231 || pattern == 45300)		
-		ft_printf("rra\n");		
+		ft_printf("rra");		
 	else if(pattern == 321 || pattern == 54300)		
-		ft_printf("sa\nrra\n");		
+		ft_printf("sa\nrra");		
 	else if(pattern == 312 || pattern == 53400)		
-		ft_printf("ra\n");		
+		ft_printf("ra");		
 	if(count_str == 5)
-		ft_printf("pa\npa\n");
+		ft_printf("\npa\npa");
+	exit(0);
 }

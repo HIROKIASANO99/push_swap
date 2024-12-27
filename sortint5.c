@@ -3,7 +3,17 @@
 #include"./ft_printf/include/ft_printf.h"
 #include"./include/push_swap.h"
 
-int ft_fivesort_4th(int box[])
+void ft_one_two_delete(t_list **stack)
+{
+	t_list *temp;
+	
+	temp = *stack;
+	temp = (*stack)->next;
+	*stack = temp->next;
+	free(temp);
+}
+
+void ft_fivesort_4th(int box[])
 {
 	if(box[5] == 1)
 	{
@@ -18,6 +28,7 @@ int ft_fivesort_4th(int box[])
 	}
 	return;
 }
+
 void ft_fivesort_3rd(int box[])
 {
 	if(box[3] == 1)
@@ -72,7 +83,7 @@ void ft_fivesort_2nd(int box[])
 	return;
 }
 
-int ft_fivesort_first(t_list **stack_a)
+void ft_fivesort_first(t_list **stack_a)
 {
 	t_list *stack;
 	int box[5];
@@ -83,7 +94,8 @@ int ft_fivesort_first(t_list **stack_a)
 	while((*stack_a) != NULL)
 	{
 		box[i] = stack->order;
-		//1,2を消すif文
+		if(box[i] == 1 || box[i] == 2)
+				ft_one_two_delete(&stack);
 		stack = stack->next;
 		i++;
 	}
@@ -93,4 +105,5 @@ int ft_fivesort_first(t_list **stack_a)
 		ft_fivesort_3rd(box);
 	else if(box[5] == 1)
 		ft_fivesort_4th(box);
+	return;
 }
