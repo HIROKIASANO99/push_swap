@@ -17,11 +17,6 @@ int ft_order_pattern(t_list **stack_a, int count_str)
 	{
 		digit = 1;
 		j = 1;
-		if( count_str == 5)
-			{
-				stack = stack->next;
-				stack = stack->next;
-			}
 		while(j < count_str)
 		{
 			digit = digit * 10;
@@ -31,7 +26,6 @@ int ft_order_pattern(t_list **stack_a, int count_str)
 		count_str--;
 		stack = stack->next;
 	}
-	printf("pattern = %d\n", pattern);
 	return(pattern);
 }
 

@@ -3,14 +3,23 @@
 #include"./ft_printf/include/ft_printf.h"
 #include"./include/push_swap.h"
 
-void ft_one_two_delete(t_list **stack)
+void ft_rm_1or2(t_list **stack)
 {
+	t_list **cur; 
 	t_list *temp;
 	
-	temp = *stack;
-	temp = (*stack)->next;
-	*stack = temp->next;
-	free(temp);
+	cur = stack;
+	while(*cur != NULL)
+	{
+		if((*cur)->order == 1 || (*cur)->order == 2)
+		{
+			temp = *cur;
+			*cur = (*cur)->next;
+			free(temp);
+		}
+		else
+			cur = &((*cur)->next);
+	}
 }
 
 void ft_fivesort_4th(int box[])
@@ -88,16 +97,14 @@ void ft_fivesort_first(t_list **stack_a)
 	t_list *stack;
 	int box[5];
 	int i;
-
+	int j = 1;
 	stack = *stack_a;
-	i = 1;
-	while((*stack_a) != NULL)
+	i = 0;
+	while(stack != NULL)
 	{
-		box[i] = stack->order;
-		if(box[i] == 1 || box[i] == 2)
-				ft_one_two_delete(&stack);
-		stack = stack->next;
 		i++;
+		box[i] = stack->order;
+		stack = stack->next;
 	}
 	if(box[1] == 1 || box[2] == 1)
 		ft_fivesort_2nd(box);
@@ -105,5 +112,6 @@ void ft_fivesort_first(t_list **stack_a)
 		ft_fivesort_3rd(box);
 	else if(box[5] == 1)
 		ft_fivesort_4th(box);
+	ft_rm_1or2(stack_a);
 	return;
 }
