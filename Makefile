@@ -7,7 +7,7 @@ SRCS	= \
 
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 
-CFLG	= #-Wall -Wextra -Werror -g 
+CFLG	= -Wall -Wextra -Werror -g 
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a

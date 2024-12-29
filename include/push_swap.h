@@ -32,6 +32,9 @@ void ft_fivesort_first(t_list **stack_a);
 void	ft_check_a(t_list *stack);
 
 //debug.c
-void print_list(t_list *lst, char c);									
+void print_list(t_list *lst, char c);					
+
+//error.c
+int ft_print_error(int errnum);
 #endif
 

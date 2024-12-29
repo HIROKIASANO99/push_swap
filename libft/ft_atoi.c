@@ -48,7 +48,6 @@ int	ft_atoi(char *str)
 	int			sign;
 	long long	num;
 
-
 	i = 0;
 	sign = 1;
 	num = 0;
@@ -63,7 +62,7 @@ int	ft_atoi(char *str)
 		num = (num * 10) + (str[i] - '0');
 		i++;
 		if (!check_overflow(num))
-			return(0);
+			exit(1);
 	}
 	return (sign * (num));
 }

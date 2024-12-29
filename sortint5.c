@@ -97,7 +97,6 @@ void ft_fivesort_first(t_list **stack_a)
 	t_list *stack;
 	int box[5];
 	int i;
-	int j = 1;
 	stack = *stack_a;
 	i = 0;
 	while(stack != NULL)
@@ -113,5 +112,6 @@ void ft_fivesort_first(t_list **stack_a)
 	else if(box[5] == 1)
 		ft_fivesort_4th(box);
 	ft_rm_1or2(stack_a);
+	ft_printf("pa\npa");
 	return;
 }

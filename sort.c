@@ -6,10 +6,8 @@
 void	ft_find_max_min(t_list **stack, int grp ,int *maxnumber, int *minnumber)
 {
 	t_list *top;
-	int count;
 
 	top = *stack;
-	count = 0;
 	while(*stack != NULL)
 	{
 		if((*stack)->group == grp)
@@ -44,12 +42,10 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b ,int size)
 {
 	int maxnumber;
 	int posi;
-	int i;
 
 	maxnumber = size;
 	while(maxnumber >= 1)
 	{
-		i = 0;
 		posi = ft_find_position(stack_b, &maxnumber);
 		if (posi <= maxnumber / 2)
 		{

@@ -1,7 +1,15 @@
 #include "./libft/libft.h"
 #include"./ft_printf/include/ft_printf.h"
 
- 
+int ft_print_error(int errnum)
+{
+	if(errnum == 1)
+	{
+		ft_printf("Error\n");
+	}
+	return(0);
+}	
+
 int ft_error_dup_int(int chkbox[], int number, int j)
 {
 	int i;

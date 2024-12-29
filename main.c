@@ -81,6 +81,7 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 		if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
 			return(0);
 	}
+	ft_check_a(*stack_a);
 	return(count_int);
 }
 
@@ -92,7 +93,7 @@ int main(int argc, char **argv)
 	int		count_str;
 
 	if(argc < 2)
-		return(ft_printf("Error\n"));
+		return(0);
 	stack_a = NULL;
 	count_str = 0;
 	if(argc == 2)
