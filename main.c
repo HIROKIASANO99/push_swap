@@ -107,11 +107,10 @@ int main(int argc, char **argv)
 		count_str = add_to_stack_a(argc - 1, argv, &stack_a);
 	}
 	if(count_str == 0)
-		return(0);
+			ft_free_stack(stack_a);
 	if(count_str == 3 || count_str == 5)
 		ft_min_sort(&stack_a ,count_str);
 	ft_group_catgory(&stack_a,count_str);
-//print_list(stack_a, 'a');									
 	ft_sortstack(stack_a, count_str);
 	return(0);
 }
