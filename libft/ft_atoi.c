@@ -56,6 +56,8 @@ int	ft_atoi(char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if(str[i] == '0' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
+		exit(ft_printf("Error\n"));
 	while ('0' <= str[i] && str[i] <= '9')
 	{
 		num = (num * 10) + (str[i] - '0');
