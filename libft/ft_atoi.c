@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
 static int	skip_and_minus_cheak(int sign, const char *str)
 {
@@ -50,8 +50,7 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	sign = 1;
-	num = 0;
-	
+	num = 0;	
 	sign = skip_and_minus_cheak(sign, str);
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
@@ -64,6 +63,8 @@ int	ft_atoi(char *str)
 		if (!check_overflow(num))
 			exit(1);
 	}
+	if(num == 0 && sign -1)
+		exit(ft_printf("Error\n"));
 	return (sign * (num));
 }
 
