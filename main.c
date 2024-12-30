@@ -66,7 +66,7 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	i = 0;
 	*stack_a = ft_lstnew(strs[i]);
 	if(!ft_error_dup_int(error_dup_int ,(*stack_a)->number, i))
-		return(0);
+		ft_free_stack(*stack_a);
 	i++;
 	while(i < count_int)
 	{
@@ -79,7 +79,7 @@ int add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 		ft_lstadd_back(stack_a, add_stack);		
 		i++;
 		if(!ft_error_dup_int(error_dup_int , add_stack->number, i))
-			return(0);
+			ft_free_stack(*stack_a);
 	}
 	ft_check_a(*stack_a);
 	return(count_int);

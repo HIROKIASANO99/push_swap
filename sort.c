@@ -113,6 +113,7 @@ void	ft_sortstack(t_list *stack_a, int size)
 	ft_first_sort(&stack_a, &stack_b, 5, 2);
 	ft_first_sort(&stack_a, &stack_b, 6, 1);
 	ft_second_sort(&stack_a, &stack_b , size);
+	ft_free_stack(stack_a);
 //print_list(stack_a, 'a');
 //print_list(stack_b, 'b');
 	

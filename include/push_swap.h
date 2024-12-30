@@ -34,6 +34,9 @@ void	ft_check_a(t_list *stack);
 //debug.c
 void print_list(t_list *lst, char c);					
 
+//free.c
+void ft_free_stack(t_list *stack);
+
 //error.c
 int ft_print_error(int errnum);
 #endif

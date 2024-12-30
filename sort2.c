@@ -49,5 +49,7 @@ void ft_min_sort(t_list **stack_a ,int count_str)
 		ft_printf("sa\nrra");		
 	else if(pattern == 312 || pattern == 53400)		
 		ft_printf("ra");		
+	if(count_str == 5)
+		ft_printf("\npa\npa");
 	exit(0);
 }
