@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/push_swap.h"
 
 static int	skip_and_minus_cheak(int sign, const char *str)
@@ -41,7 +40,6 @@ static int	check_overflow(long long num)
 	return (1);
 }
 
-
 int	ft_atoi(char *str)
 {
 	int			i;
@@ -50,13 +48,13 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	sign = 1;
-	num = 0;	
+	num = 0;
 	sign = skip_and_minus_cheak(sign, str);
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if(str[i] == '0' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
+	if (str[i] == '0' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
 		exit(ft_printf("Error\n"));
 	while ('0' <= str[i] && str[i] <= '9')
 	{
@@ -65,7 +63,7 @@ int	ft_atoi(char *str)
 		if (!check_overflow(num))
 			exit(1);
 	}
-	if(num == 0 && sign -1)
+	if (num == 0 && sign - 1)
 		exit(ft_printf("Error\n"));
 	return (sign * (num));
 }

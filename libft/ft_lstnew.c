@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf/include/ft_printf.h"
+#include "../include/push_swap.h"
 #include "libft.h"
-#include"../include/push_swap.h"
-#include"../ft_printf/include/ft_printf.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
-	
-	if(!ft_error_intcheck(content))
-		return(NULL);
-	new=(t_list *)malloc(sizeof(t_list));
-	if(!new)
+
+	if (!ft_error_intcheck(content))
+		return (NULL);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
 	new->number = ft_atoi((char *)content);
 	new->order = 1;
 	new->next = NULL;
-	return(new);
+	return (new);
 }

@@ -1,23 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort2.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 21:47:13 by hiasano           #+#    #+#             */
+/*   Updated: 2025/01/07 22:26:33 by hiasano          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "./ft_printf/include/ft_printf.h"
+#include "./include/push_swap.h"
 #include "./libft/libft.h"
-#include"./ft_printf/include/ft_printf.h"
-#include"./include/push_swap.h"
 
+int	ft_order_pattern(t_list **stack_a, int count_str)
+{
+	t_list	*stack;
+	int		pattern;
+	int		digit;
+	int		j;
 
-int ft_order_pattern(t_list **stack_a, int count_str)
-{	
-	t_list *stack;
-	int pattern;
-	int digit;
-	int j;
-	
 	pattern = 0;
 	stack = *stack_a;
-	while(stack != NULL)
+	while (stack != NULL)
 	{
 		digit = 1;
 		j = 1;
-		while(j < count_str)
+		while (j < count_str)
 		{
 			digit = digit * 10;
 			j++;
@@ -26,30 +36,30 @@ int ft_order_pattern(t_list **stack_a, int count_str)
 		count_str--;
 		stack = stack->next;
 	}
-	return(pattern);
+	return (pattern);
 }
 
-void ft_min_sort(t_list **stack_a ,int count_str)
+void	ft_min_sort(t_list **stack_a, int count_str)
 {
-	int pattern;
+	int	pattern;
 
 	pattern = 0;
-	if(count_str == 5)
+	if (count_str == 5)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
-	if(pattern == 123 || pattern == 34500)		
-		return;		
-	else if(pattern == 132 || pattern == 35400)		
-		ft_printf("ra\nsa\nrra");		
-	else if(pattern == 213 || pattern == 43500)		
-		ft_printf("sa");		
-	else if(pattern == 231 || pattern == 45300)		
-		ft_printf("rra");		
-	else if(pattern == 321 || pattern == 54300)		
-		ft_printf("sa\nrra");		
-	else if(pattern == 312 || pattern == 53400)		
-		ft_printf("ra");		
-	if(count_str == 5)
+	if (pattern == 123 || pattern == 34500)
+		return ;
+	else if (pattern == 132 || pattern == 35400)
+		ft_printf("ra\nsa\nrra");
+	else if (pattern == 213 || pattern == 43500)
+		ft_printf("sa");
+	else if (pattern == 231 || pattern == 45300)
+		ft_printf("rra");
+	else if (pattern == 321 || pattern == 54300)
+		ft_printf("sa\nrra");
+	else if (pattern == 312 || pattern == 53400)
+		ft_printf("ra");
+	if (count_str == 5)
 		ft_printf("\npa\npa");
 	exit(0);
 }

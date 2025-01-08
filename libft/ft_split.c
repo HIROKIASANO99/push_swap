@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "../include/push_swap.h"
+#include "libft.h"
 
 static int	ft_count_str(char const *s, char c)
 {
@@ -57,7 +57,7 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 		i++;
 	}
 	*res_char = (char *)malloc(end - start + 1);
-	if(res_char == NULL)
+	if (res_char == NULL)
 		return (0);
 	return (end);
 }
@@ -86,7 +86,7 @@ static void	add_char_to_string(char *ss, char **result, char c)
 	result[j] = NULL;
 }
 
-char	**result_free(char const *s, char c,char **result, int count_str)
+char	**result_free(char const *s, char c, char **result, int count_str)
 {
 	int	i;
 	int	n_str;
@@ -107,7 +107,7 @@ char	**result_free(char const *s, char c,char **result, int count_str)
 				result[i] = NULL;
 			}
 			free(result);
-			result= NULL;
+			result = NULL;
 		}
 		i++;
 	}
@@ -115,7 +115,7 @@ char	**result_free(char const *s, char c,char **result, int count_str)
 	return (result);
 }
 
-char	**ft_split(char const *s, char c,int *get_count_str)
+char	**ft_split(char const *s, char c, int *get_count_str)
 {
 	int		count_str;
 	char	**result;
@@ -123,7 +123,7 @@ char	**ft_split(char const *s, char c,int *get_count_str)
 
 	result = NULL;
 	if (!s)
-	{	
+	{
 		ft_printf("Error\n");
 		return (0);
 	}
@@ -148,6 +148,7 @@ int	main(int argc, char **argv)
 	char		**ret;
 	int			i;
 	int			ko;
+
 	c = ' ';
 	printf("------------");
 	result=ft_split(s ,c,&ko);

@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-#include "libft.h"
 /*   By: hiasano <hiasano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 04:37:34 by hiasano           #+#    #+#             */
-/*   Updated: 2024/05/18 17:24:42 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/08 20:50:21 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +25,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	memory = malloc(total_size);
 	if (memory == NULL)
-		return (NULL);	
+		return (NULL);
 	c_memory = (char *)memory;
 	while (total_size > i)
 	{
@@ -60,7 +59,7 @@ void	*ft_calloc(size_t count, size_t size)
 // 			return (1);
 // 		}
 // 	}
-// 	printf("Both calloc and ft_calloc successfully 
+// 	printf("Both calloc and ft_calloc successfully
 // allocated and initialized memory to zero.\n");
 // 	free(array_calloc);
 // 	free(array_ft_calloc);

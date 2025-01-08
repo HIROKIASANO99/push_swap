@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sortint5.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 21:47:42 by hiasano           #+#    #+#             */
+/*   Updated: 2025/01/07 22:07:57 by hiasano          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "./ft_printf/include/ft_printf.h"
+#include "./include/push_swap.h"
 #include "./libft/libft.h"
-#include"./ft_printf/include/ft_printf.h"
-#include"./include/push_swap.h"
 
-void ft_rm_1or2(t_list **stack)
+void	ft_rm_1or2(t_list **stack)
 {
-	t_list **cur; 
-	t_list *temp;
-	
+	t_list	**cur;
+	t_list	*temp;
+
 	cur = stack;
-	while(*cur != NULL)
+	while (*cur != NULL)
 	{
-		if((*cur)->order == 1 || (*cur)->order == 2)
+		if ((*cur)->order == 1 || (*cur)->order == 2)
 		{
 			temp = *cur;
 			*cur = (*cur)->next;
@@ -22,96 +33,96 @@ void ft_rm_1or2(t_list **stack)
 	}
 }
 
-void ft_fivesort_4th(int box[])
+void	ft_fivesort_4th(int box[])
 {
-	if(box[5] == 1)
+	if (box[4] == 1)
 	{
-		if(box[1] == 2)
-			ft_printf("rra\npb\npb\n");		
-		if(box[2] == 2)
-			ft_printf("rra\npb\nrra\npb\nrb\n");		
-		if(box[3] == 2)
-			ft_printf("rra\npb\nrra\nrra\npb\n");		
-		if(box[4] == 2)
-			ft_printf("rra\npb\nrra\npb\n");		
+		if (box[0] == 2)
+			ft_printf("rra\npb\npb\n");
+		if (box[1] == 2)
+			ft_printf("rra\npb\nrra\npb\nrb\n");
+		if (box[2] == 2)
+			ft_printf("rra\npb\nrra\nrra\npb\n");
+		if (box[3] == 2)
+			ft_printf("rra\npb\nrra\npb\n");
 	}
-	return;
+	return ;
 }
 
-void ft_fivesort_3rd(int box[])
+void	ft_fivesort_3rd(int box[])
 {
-	if(box[3] == 1)
+	if (box[2] == 1)
 	{
-		if(box[1] == 2)
+		if (box[0] == 2)
 			ft_printf("pb\nra\npb\nrb\n");
-		if(box[2] == 2)
+		if (box[1] == 2)
 			ft_printf("ra\nsa\npb\npb\n");
-		if(box[4] == 2)
+		if (box[3] == 2)
 			ft_printf("ra\nra\npb\npb\n");
-		if(box[5] == 2)
+		if (box[4] == 2)
 			ft_printf("ra\nra\npb\nra\npb\npb\n");
 	}
-	if(box[4] == 1)
+	if (box[3] == 1)
 	{
-		if(box[1] == 2)
+		if (box[0] == 2)
 			ft_printf("pb\nra\nra\npb\nrb\n");
-		if(box[2] == 2)
+		if (box[1] == 2)
 			ft_printf("ra\npb\nra\npb\nrb\n");
-		if(box[3] == 2)
+		if (box[2] == 2)
 			ft_printf("rra\nrra\npb\nrra\npb\n");
-		if(box[5] == 2)
+		if (box[4] == 2)
 			ft_printf("rra\nrra\npb\npb\n");
 	}
-	return;
+	return ;
 }
 
-void ft_fivesort_2nd(int box[])
+void	ft_fivesort_2nd(int box[])
 {
-	if(box[1] == 1)
+	if (box[0] == 1)
 	{
-		if(box[2] == 2)
+		if (box[1] == 2)
 			ft_printf("pb\npb\n");
-		if(box[3] == 2)
+		if (box[2] == 2)
 			ft_printf("pb\nra\npb\n");
-		if(box[4] == 2)
+		if (box[3] == 2)
 			ft_printf("pb\nra\nra\npb\n");
-		if(box[5] == 2)
+		if (box[4] == 2)
 			ft_printf("pb\nrra\npb\n");
 	}
-	if(box[2] == 1)
+	if (box[1] == 1)
 	{
-		if(box[1] == 2)
+		if (box[0] == 2)
 			ft_printf("pb\npb\nsb\n");
-		if(box[3] == 2)
+		if (box[2] == 2)
 			ft_printf("ra\npb\nsb\n");
-		if(box[4] == 2)
+		if (box[3] == 2)
 			ft_printf("ra\npb\nra\npb\n");
-		if(box[5] == 2)
+		if (box[4] == 2)
 			ft_printf("ra\npb\nra\nra\npb\n");
 	}
-	return;
+	return ;
 }
 
-void ft_fivesort_first(t_list **stack_a)
+void	ft_fivesort_first(t_list **stack_a)
 {
-	t_list *stack;
-	int box[5];
-	int i;
+	t_list	*stack;
+	int		box[5];
+	int		i;
+
 	stack = *stack_a;
 	i = 0;
-	while(stack != NULL)
+	while (stack != NULL)
 	{
-		i++;
 		box[i] = stack->order;
 		stack = stack->next;
+		i++;
 	}
-	if(box[1] == 1 || box[2] == 1)
+	if (box[0] == 1 || box[1] == 1)
 		ft_fivesort_2nd(box);
-	else if(box[3] == 1 || box[4] == 1)
+	else if (box[2] == 1 || box[3] == 1)
 		ft_fivesort_3rd(box);
-	else if(box[5] == 1)
+	else if (box[4] == 1)
 		ft_fivesort_4th(box);
 	ft_rm_1or2(stack_a);
-	ft_printf("pa\npa");
-	return;
+	return ;
 }
