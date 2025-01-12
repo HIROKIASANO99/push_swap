@@ -90,6 +90,5 @@ int	ft_atoi(char *str)
 ////     printf("ft_Number2: %d\n", ft_num2);
 ////     printf("ft_Number3: %d\n", ft_num3);
 //
-//     printf(">>>>>>>>>>>>>>>\nmax=		%d\nmin=		%d\n",INT_MAX,INT_MIN);
 //     return (0);
 // }
