@@ -58,24 +58,11 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b, int size)
 	while (maxnumber >= 1)
 	{
 		posi = ft_find_position(stack_b, &maxnumber);
-		if (posi <= maxnumber / 2)
-		{
-			while ((*stack_b)->order != maxnumber)
-			{
-				ft_command_rotate(stack_b);
-				ft_printf("rb\n");
-			}
-		}
-		else
-		{
-			while ((*stack_b)->order != maxnumber)
-			{
-				ft_command_reverse_rotate(stack_b);
-				ft_printf("rrb\n");
-			}
-		}
+		rotate_stack_b(stack_b, maxnumber, posi);
 		ft_command_push(stack_a, stack_b);
 		ft_printf("pa\n");
+		if (maxnumber == 1)
+			ft_printf("pa");
 		maxnumber--;
 	}
 }

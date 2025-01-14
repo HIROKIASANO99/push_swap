@@ -15,6 +15,7 @@
 
 # include "../ft_printf/include/ft_printf.h"
 # include "../libft/libft.h"
+# include "group_args.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -35,6 +36,9 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b, int size);
 // sort2.c
 void	ft_min_sort(t_list **stack_a, int count_str);
 int		ft_order_pattern(t_list **stack_a, int count_str);
+
+//sort3.c
+static void	rotate_stack_b(t_list **stack_b, int maxnumber, int posi);
 
 // sortint5.c
 void	ft_fivesort_first(t_list **stack_a);
