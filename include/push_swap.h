@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:46:35 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/07 21:46:42 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/14 20:57:26 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 
 // main.c
 void	ft_group_catgory(t_list **stack_a, int count_str);
+
+// help_add_to_stack_a.c
+int		init_add_to_stack_a(t_add_args *args);
+int		loop_add_to_stack_a(t_add_args *args);
 
 // command.c
 void	ft_command_swap(t_list *node);
@@ -37,7 +41,7 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b, int size);
 void	ft_min_sort(t_list **stack_a, int count_str);
 int		ft_order_pattern(t_list **stack_a, int count_str);
 
-//sort3.c
+// sort3.c
 void	rotate_stack_b(t_list **stack_b, int maxnumber, int posi);
 
 // sortint5.c

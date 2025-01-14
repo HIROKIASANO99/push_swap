@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:46:58 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/07 21:47:01 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/14 20:43:37 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,45 +73,23 @@ void	ft_group_catgory(t_list **stack_a, int count_str)
 
 int	add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 {
-	int		i;
-	t_list	*add_stack;
-	int		*error_dup_int;
+	int			i;
+	int			*error_dup_int;
+	t_add_args	args;
 
-	error_dup_int = malloc(sizeof(int) * count_int);
-	if (!error_dup_int)
+	args.count_int = count_int;
+	args.strs = strs;
+	args.stack_a = stack_a;
+	args.error_dup_int = &error_dup_int;
+	args.i = &i;
+	if (!init_add_to_stack_a(&args))
 		return (0);
-	i = 0;
-	*stack_a = ft_lstnew(strs[i]);
-	if (!ft_error_dup_int(error_dup_int, (*stack_a)->number, i))
-	{
-		free(error_dup_int);      
-		ft_free_stack(*stack_a);  
+	if (!loop_add_to_stack_a(&args))
 		return (0);
-	}
-	i++;
-	while (i < count_int)
-	{
-		add_stack = ft_lstnew(strs[i]);
-		if (!add_stack)
-		{
-			free(error_dup_int);
-			i++;
-			return (0);
-		}
-		ft_lstadd_back(stack_a, add_stack);
-		i++;
-		if (!ft_error_dup_int(error_dup_int, add_stack->number, i))
-		{
-			free(error_dup_int);
-			ft_free_stack(*stack_a);
-			return (0);
-		}
-	}
 	ft_check_a(*stack_a);
 	free(error_dup_int);
 	return (count_int);
 }
-
 
 int	main(int argc, char **argv)
 {
