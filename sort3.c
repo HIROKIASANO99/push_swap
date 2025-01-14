@@ -1,7 +1,6 @@
-
 #include "./include/push_swap.h"
 
-static void	rotate_stack_b(t_list **stack_b, int maxnumber, int posi)
+void	rotate_stack_b(t_list **stack_b, int maxnumber, int posi)
 {
 	if (posi <= maxnumber / 2)
 	{
