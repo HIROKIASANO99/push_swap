@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:13 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/07 22:26:33 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/19 00:03:56 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,20 @@ void	ft_min_sort(t_list **stack_a, int count_str)
 	if (count_str == 5)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
+printf("patterc = %d\n",pattern);
 	if (pattern == 123 || pattern == 34500)
 		return ;
 	else if (pattern == 132 || pattern == 35400)
-		ft_printf("ra\nsa\nrra");
+		ft_printf("ra\nsa\nrra\n");
 	else if (pattern == 213 || pattern == 43500)
-		ft_printf("sa");
+		ft_printf("sa\n");
 	else if (pattern == 231 || pattern == 45300)
-		ft_printf("rra");
+		ft_printf("rra\n");
 	else if (pattern == 321 || pattern == 54300)
-		ft_printf("sa\nrra");
+		ft_printf("sa\nrra\n");
 	else if (pattern == 312 || pattern == 53400)
-		ft_printf("ra");
+		ft_printf("ra\n");
 	if (count_str == 5)
-		ft_printf("\npa\npa");
+		ft_printf("pa\npa\n");
 	exit(0);
 }

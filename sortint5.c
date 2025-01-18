@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:42 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/07 22:07:57 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/18 23:59:02 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_fivesort_3rd(int box[])
 		if (box[3] == 2)
 			ft_printf("ra\nra\npb\npb\n");
 		if (box[4] == 2)
-			ft_printf("ra\nra\npb\nra\npb\npb\n");
+			ft_printf("ra\nra\npb\nra\npb\n");
 	}
 	if (box[3] == 1)
 	{
@@ -94,7 +94,7 @@ void	ft_fivesort_2nd(int box[])
 		if (box[0] == 2)
 			ft_printf("pb\npb\nsb\n");
 		if (box[2] == 2)
-			ft_printf("ra\npb\nsb\n");
+			ft_printf("ra\npb\npb\n");
 		if (box[3] == 2)
 			ft_printf("ra\npb\nra\npb\n");
 		if (box[4] == 2)
