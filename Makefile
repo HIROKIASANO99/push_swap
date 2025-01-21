@@ -2,7 +2,8 @@ INCLUDE	= ./include
 NAME	= push_swap
 SRCS	= \
 		main.c error.c command.c sort.c sort2.c sort3.c \
-		check.c debug.c sortint5.c free.c help_add_to_stack_a.c
+		check.c debug.c sortint5.c free.c help_add_to_stack_a.c \
+		sortint5_rote.c
 
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 

@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:46:35 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/14 20:57:26 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/21 20:55:34 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void	rotate_stack_b(t_list **stack_b, int maxnumber, int posi);
 
 // sortint5.c
 void	ft_fivesort_first(t_list **stack_a);
+
+
+//
+void	ft_stack_rote(t_list **stack_a , int box[]);
 
 // check.c
 void	ft_check_a(t_list *stack);

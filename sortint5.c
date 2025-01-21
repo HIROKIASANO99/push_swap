@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:42 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/18 23:59:02 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/21 20:49:17 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,6 @@ void	ft_fivesort_first(t_list **stack_a)
 	else if (box[4] == 1)
 		ft_fivesort_4th(box);
 	ft_rm_1or2(stack_a);
+	ft_stack_rote(stack_a , box);
 	return ;
 }
