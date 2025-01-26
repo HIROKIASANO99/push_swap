@@ -14,31 +14,19 @@
 #include "./include/push_swap.h"
 #include "./libft/libft.h"
 
-//void	ft_rm_1or2(t_list **stack)
-//{
-//	t_list	**cur;
-//	t_list	*temp;
-//
-//	cur = stack;
-//	while (*cur != NULL)
-//	{
-//		if ((*cur)->order == 1 || (*cur)->order == 2)
-//		{
-//			temp = *cur;
-//			*cur = (*cur)->next;
-//			free(temp);
-//		}
-//		else
-//			cur = &((*cur)->next);
-//	}
-//}
-//
-//void	ft_fivesort_4th(int box[])
+//void    ft_command_swap(t_list **node)
+//void	ft_command_push(t_list **ipstack, t_list **opstack)
+//void	ft_command_rotate(t_list **stack)
+//void	ft_command_reverse_rotate(t_list **stack)
+
+
+//void	ft_fivesort_4th(t_list **stack_a, int box[])
 //{
 //	if (box[4] == 1)
 //	{
 //		if (box[0] == 2)
 //			ft_printf("rra\npb\npb\n");
+			ft_command_reverse_rotate(t_list **stack)
 //		if (box[1] == 2)
 //			ft_printf("rra\npb\nrra\npb\nrb\n");
 //		if (box[2] == 2)
@@ -48,8 +36,8 @@
 //	}
 //	return ;
 //}
-//
-//void	ft_fivesort_3rd(int box[])
+
+//void	ft_fivesort_3rd( t_list **stack_a, int box[])
 //{
 //	if (box[2] == 1)
 //	{
@@ -76,7 +64,7 @@
 //	return ;
 //}
 //
-//void	ft_fivesort_2nd(int box[])
+//void	ft_fivesort_2nd(t_list **stack_a, int box[])
 //{
 //	if (box[0] == 1)
 //	{
@@ -110,10 +98,15 @@ void	ft_stack_rote(t_list **stack_a , int box[])
 	
 	while(i <= 5)
 	{
-		printf("box[%d] = %d\n", i - 1, box[i - 1]);
+		printf("box[%d] = %d\n", i , box[i - 1]);
 		i++; 
 	}
-	printf("i = %d\n",i);
+	if (box[0] == 1 || box[1] == 1)
+		ft_fivesort_2nd( stack_a, box);
+	else if (box[2] == 1 || box[3] == 1)
+		ft_fivesort_3rd(stack_a, box);
+	else if (box[4] == 1)
+		ft_fivesort_4th(stack_a, box);
 	
 	print_list(*stack_a, 'A');
 
