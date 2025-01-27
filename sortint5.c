@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:42 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/21 20:49:17 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/27 21:52:02 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_fivesort_4th(int box[])
 		if (box[0] == 2)
 			ft_printf("rra\npb\npb\n");
 		if (box[1] == 2)
-			ft_printf("rra\npb\nrra\npb\nrb\n");
+			ft_printf("rra\npb\nra\npb\n");
 		if (box[2] == 2)
 			ft_printf("rra\npb\nrra\nrra\npb\n");
 		if (box[3] == 2)
@@ -83,9 +83,9 @@ void	ft_fivesort_2nd(int box[])
 		if (box[1] == 2)
 			ft_printf("pb\npb\n");
 		if (box[2] == 2)
-			ft_printf("pb\nra\npb\n");
+			ft_printf("pb\nsa\npb\n");
 		if (box[3] == 2)
-			ft_printf("pb\nra\nra\npb\n");
+			ft_printf("pb\nra\nra\npb\nra\n");
 		if (box[4] == 2)
 			ft_printf("pb\nrra\npb\n");
 	}
@@ -94,11 +94,11 @@ void	ft_fivesort_2nd(int box[])
 		if (box[0] == 2)
 			ft_printf("pb\npb\nsb\n");
 		if (box[2] == 2)
-			ft_printf("ra\npb\npb\n");
+			ft_printf("ra\npb\npb\nrra\n");
 		if (box[3] == 2)
-			ft_printf("ra\npb\nra\npb\n");
+			ft_printf("ra\npb\nra\npb\nra\n");
 		if (box[4] == 2)
-			ft_printf("ra\npb\nra\nra\npb\n");
+			ft_printf("sa\nrra\npb\npb\n");
 	}
 	return ;
 }
