@@ -47,7 +47,6 @@ void	ft_min_sort(t_list **stack_a, int count_str)
 	if (count_str == 5)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
-printf("pattern = %d\n",pattern);
 	if (pattern == 123 )
 		return ;
 	else if (pattern == 132 || pattern == 35400)

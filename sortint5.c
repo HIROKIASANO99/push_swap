@@ -98,7 +98,7 @@ void	ft_fivesort_2nd(int box[])
 		if (box[3] == 2)
 			ft_printf("ra\npb\nra\npb\nra\n");
 		if (box[4] == 2)
-			ft_printf("sa\nrra\npb\npb\n");
+			ft_printf("sa\nrra\npb\npb\nrb\n");
 	}
 	return ;
 }

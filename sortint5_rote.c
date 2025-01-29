@@ -25,7 +25,7 @@ void	ft_fivesort_4th_rote(t_list **stack, int box[])
 	if (box[4] == 1)
 	{
 		if (box[1] == 2)
-			ft_command_reverse_rotate(stack);	
+			ft_command_rotate(stack);	
 		if (box[2] == 2)
 			ft_command_reverse_rotate(stack);	
 	}
@@ -58,20 +58,18 @@ void	ft_fivesort_3rd_rote( t_list **stack, int box[])
 
 void	ft_stack_rote(t_list **stack_a , int box[])
 {
-	int i;
-	i = 1;
-	
-	while(i <= 5)
-	{
-		printf("box[%d] = %d\n", i , box[i - 1]);
-		i++; 
-	}
+//	int i;
+//	i = 1; 
+//	while(i <= 5)
+//	{
+//		printf("box[%d] = %d\n", i , box[i - 1]);
+//		i++; 
+//	}
 	if (box[2] == 1 || box[3] == 1)
 		ft_fivesort_3rd_rote(stack_a, box);
-	else if (box[4] == 1)
+	else  if(box[4] == 1)
 		ft_fivesort_4th_rote(stack_a, box);
-	
-	print_list(*stack_a, 'A');
+//	print_list(*stack_a, 'A');
 
 }
 //void	ft_fivesort_first(t_list **stack_a)
