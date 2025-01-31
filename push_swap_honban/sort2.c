@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:13 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/19 00:03:56 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/30 21:26:51 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_min_sort(t_list **stack_a, int count_str)
 	if (count_str == 5)
 		ft_fivesort_first(stack_a);
 	pattern = ft_order_pattern(stack_a, count_str);
-	if (pattern == 123 )
+	if (pattern == 123)
 		return ;
 	else if (pattern == 132 || pattern == 35400)
 		ft_printf("ra\nsa\nrra\n");

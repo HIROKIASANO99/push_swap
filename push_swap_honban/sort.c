@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:24 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/18 23:41:20 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/01/30 21:25:58 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	ft_second_sort(t_list **stack_a, t_list **stack_b, int size)
 		rotate_stack_b(stack_b, maxnumber, posi);
 		ft_command_push(stack_a, stack_b);
 		ft_printf("pa\n");
-	//	if (maxnumber == 1)
-	//		ft_printf("pa");
 		maxnumber--;
 	}
 }
