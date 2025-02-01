@@ -58,7 +58,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
-int					ft_atoi(char *str);
+int					ft_atoi(char *str,int *i_ovfg);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				*ft_calloc(size_t count, size_t size);
@@ -75,7 +75,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl_fd(char *s, int fd);
 
 // bonus
-t_list				*ft_lstnew(void *content);
+t_list	*ft_lstnew(void *content , int *i_ovfg);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);

@@ -14,13 +14,21 @@
 
 int	init_add_to_stack_a(t_add_args *args)
 {
+	int int_over_frag;
+
+	int_over_frag = 0;
 	*(args->error_dup_int) = malloc(sizeof(int) * args->count_int);
 	if (!*(args->error_dup_int))
 		return (0);
 	*(args->i) = 0;
-	*(args->stack_a) = ft_lstnew(args->strs[*(args->i)]);
+	*(args->stack_a) = ft_lstnew(args->strs[*(args->i)] , &int_over_frag);
+	    if (!*(args->stack_a))  
+    {
+        free(*(args->error_dup_int));
+        return (0);
+    }
 	if (!ft_error_dup_int(*(args->error_dup_int), (*(args->stack_a))->number,
-			*(args->i)))
+			*(args->i)) || int_over_frag == 1 )
 	{
 		free(*(args->error_dup_int));
 		ft_free_stack(*(args->stack_a));
@@ -33,10 +41,12 @@ int	init_add_to_stack_a(t_add_args *args)
 int	loop_add_to_stack_a(t_add_args *args)
 {
 	t_list	*add_stack;
+	int int_over_frag;
 
+	int_over_frag = 0;
 	while (*(args->i) < args->count_int)
 	{
-		add_stack = ft_lstnew(args->strs[*(args->i)]);
+		add_stack = ft_lstnew(args->strs[*(args->i)] , &int_over_frag);
 		if (!add_stack)
 		{
 			free(*(args->error_dup_int));
@@ -46,7 +56,7 @@ int	loop_add_to_stack_a(t_add_args *args)
 		ft_lstadd_back(args->stack_a, add_stack);
 		(*(args->i))++;
 		if (!ft_error_dup_int(*(args->error_dup_int), add_stack->number,
-				*(args->i)))
+				*(args->i)) || int_over_frag == 1) 
 		{
 			free(*(args->error_dup_int));
 			ft_free_stack(*(args->stack_a));

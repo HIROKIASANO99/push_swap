@@ -83,11 +83,12 @@ int	add_to_stack_a(int count_int, char **strs, t_list **stack_a)
 	args.error_dup_int = &error_dup_int;
 	args.i = &i;
 	if (!init_add_to_stack_a(&args))
-		return (0);
+		return(0);
 	if (!loop_add_to_stack_a(&args))
-		return (0);
+		return(0);
 	ft_check_a(*stack_a);
 	free(error_dup_int);
+	free(args.error_dup_int);
 	return (count_int);
 }
 

@@ -34,13 +34,19 @@ static int	check_overflow(long long num)
 {
 	if ((num > INT_MAX) || (INT_MIN > num))
 	{
-		printf("Error\n");
 		return (0);
 	}
 	return (1);
 }
 
-int	ft_atoi(char *str)
+int ft_ovfg(int *i_ovfg)
+{
+	*i_ovfg = 1;
+	ft_printf("Error\n");
+	return(0);
+}
+
+int	ft_atoi(char *str,int *i_ovfg)
 {
 	int			i;
 	int			sign;
@@ -55,16 +61,16 @@ int	ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] == '0' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
-		exit(ft_printf("Error\n"));
-	while ('0' <= str[i] && str[i] <= '9')
+			return(ft_ovfg(i_ovfg));
+while ('0' <= str[i] && str[i] <= '9')
 	{
 		num = (num * 10) + (str[i] - '0');
 		i++;
 		if (!check_overflow(num))
-			exit(1);
+			return(ft_ovfg(i_ovfg));
 	}
 	if (num == 0 && sign - 1)
-		exit(ft_printf("Error\n"));
+			return(ft_ovfg(i_ovfg));
 	return (sign * (num));
 }
 
