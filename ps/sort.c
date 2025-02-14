@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:47:24 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/30 21:25:58 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/02/15 00:01:51 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,23 @@ void	ft_first_sort(t_list **stack_a, t_list **stack_b, int top, int bottom)
 	}
 }
 
-void	ft_sortstack(t_list *stack_a, int size)
+void	ft_sortstack(t_list *stack_a, int size, char **strs)
 {
 	t_list	*stack_b;
+	int i;
 
+	i = 0;
 	stack_b = NULL;
-	ft_check_a(stack_a);
-	ft_first_sort(&stack_a, &stack_b, 4, 3);
-	ft_first_sort(&stack_a, &stack_b, 5, 2);
-	ft_first_sort(&stack_a, &stack_b, 6, 1);
-	ft_second_sort(&stack_a, &stack_b, size);
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
+	if(size != 0)
+	{
+		ft_check_a(stack_a);
+		ft_first_sort(&stack_a, &stack_b, 4, 3);
+		ft_first_sort(&stack_a, &stack_b, 5, 2);
+		ft_first_sort(&stack_a, &stack_b, 6, 1);
+		ft_second_sort(&stack_a, &stack_b, size);
+	}
 	ft_free_stack(stack_a);
 }

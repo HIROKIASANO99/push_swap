@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:46:35 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/30 20:10:39 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/02/14 23:44:51 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_command_rotate(t_list **stack);
 void	ft_command_reverse_rotate(t_list **stack);
 
 // sort.c
-void	ft_sortstack(t_list *stack_a, int size);
+void	ft_sortstack(t_list *stack_a, int size, char **strs);
 void	ft_first_sort(t_list **stack_a, t_list **stack_b, int top, int bottom);
 void	ft_second_sort(t_list **stack_a, t_list **stack_b, int size);
 
@@ -55,6 +55,7 @@ void	ft_check_a(t_list *stack);
 
 // free.c
 void	ft_free_stack(t_list *stack);
+void	ft_free_stack_noexit(t_list *stack);
 
 // error.c
 int		ft_print_error(int errnum);

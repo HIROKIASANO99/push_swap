@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:46:11 by hiasano           #+#    #+#             */
-/*   Updated: 2025/01/07 21:46:19 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/02/14 22:00:19 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,16 @@ void	ft_free_stack(t_list *stack)
 		free(temp);
 	}
 	exit(1);
+}
+
+void	ft_free_stack_noexit(t_list *stack)
+{
+	t_list	*temp;
+
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
 }

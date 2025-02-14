@@ -6,7 +6,7 @@
 /*   By: hiasano <hiasano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 12:37:52 by hiasano           #+#    #+#             */
-/*   Updated: 2024/05/17 16:16:37 by hiasano          ###   ########.fr       */
+/*   Updated: 2025/02/15 00:00:36 by hiasano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,15 @@ static int	ft_count_char(char *org_str, char c, char **res_char)
 	i = 0;
 	if (!org_str && !res_char)
 		return (0);
-	while (org_str[i] == c && org_str[i])
-	{
-		start++;
+	while (org_str[i] == c && org_str[i] != '\0')
 		i++;
-	}
-	end = start;
-	while (org_str[i] != c && org_str[i])
-	{
-		end++;
+	start = i;
+	while (org_str[i] != c && org_str[i] != '\0')
 		i++;
-	}
-	*res_char = (char *)malloc(end - start + 1);
-	if (res_char == NULL)
-		return (0);
+	end = i;
+	*res_char = malloc((end - start + 1) * sizeof(char));
+	if (*res_char == NULL)  
+	return (0);
 	return (end);
 }
 
@@ -102,12 +97,9 @@ char	**result_free(char const *s, char c, char **result, int count_str)
 		if (result[i] == NULL)
 		{
 			while (--i >= 0)
-			{
 				free(result[i]);
-				result[i] = NULL;
-			}
 			free(result);
-			result = NULL;
+			return(NULL);
 		}
 		i++;
 	}
